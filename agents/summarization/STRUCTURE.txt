@@ -1,0 +1,101 @@
+agents/summarization/
+├── __init__.py                        # package exports
+├── state.py                           # langgraph state definitions
+├── service.py                         # public API for summarization (SummarizationService)
+├── orchestrator.py                    # service entrypoint / graph orchestration
+├── tasks.py                           # Celery background tasks for async execution
+├── STRUCTURE.txt                      # this file
+├── utils/
+│   ├── __init__.py
+│   ├── base_extractor.py              # shared BaseSummarizationAgent for all extractors
+│   └── scoring.py                     # shared scoring helpers
+├── nodes/
+│   ├── __init__.py
+│   ├── base.py                        # shared node helpers/types
+│   ├── load_candidate.py              # load-only node (not used in current graph)
+│   ├── load_session.py                # load-only node (not used in current graph)
+│   ├── skill_node.py                  # skill extraction & scoring orchestration
+│   ├── behavior_node.py               # behavior extraction & scoring orchestration
+│   ├── infra_node.py                  # infrastructure context extraction
+│   ├── domain_node.py                 # domain context extraction
+│   └── persist_summary.py             # persist results (skills, behaviors, domain_contexts, infra_contexts)
+├── resume/
+│   ├── __init__.py
+│   ├── resume_agent.py                # ResumeAgent extractor (inherits BaseSummarizationAgent)
+│   ├── skill_agent.py                 # resume → skill extraction agent
+│   ├── skills_extractor.py            # helper for extracting skills from resume
+│   ├── behavior_agent.py              # resume → behavior extraction agent
+│   ├── behaviors_extractor.py         # helper for extracting behaviors from resume
+│   ├── domain_agent.py                # resume → domain context extraction
+│   └── infra_agent.py                 # resume → infrastructure context extraction
+├── conversation/
+│   ├── __init__.py
+│   ├── conversation_agent.py          # ConversationAgent extractor (inherits BaseSummarizationAgent)
+│   ├── skill_agent.py                 # conversation → skill extraction agent
+│   ├── skills_extractor.py            # helper for extracting skills from conversation
+│   ├── behavior_agent.py              # conversation → behavior extraction agent
+│   ├── behaviors_extractor.py         # helper for extracting behaviors from conversation
+│   ├── domain_agent.py                # conversation → domain context extraction
+│   └── infra_agent.py                 # conversation → infrastructure context extraction
+├── behavior_tools/
+│   ├── __init__.py
+│   ├── behavior_scoring.py            # behavior scoring
+│   └── extracted_behavior_merger.py   # merge behavior extractions from multiple sources
+├── skill_tools/
+│   ├── __init__.py
+│   ├── analyze_dimensions.py          # analyze skill dimensions
+│   └── score_skills.py                # score skills based on dimensions/criteria
+├── merger/
+│   ├── __init__.py
+│   └── merge_extracted.py             # merge resume + conversation extracted skills/behaviors
+└── profile/
+    └── profile_summary_agent.py       # generate markdown profile summary from extracted data + DB persistence
+
+PUBLIC API (SummarizationService):
+- [python.SummarizationService.summarize_session()](agents/summarization/service.py:25)               # Run orchestrator with DB persistence
+- [python.SummarizationService.summarize_candidate_profile()](agents/summarization/service.py:35)     # Generate markdown summary from DB data and persist (GENERAL)
+- [python.SummarizationService.get_candidate_profile_summary()](agents/summarization/service.py:44)   # Retrieve summary from DB or generate from last interview session
+- [python.SummarizationService.get_candidate_profile()](agents/summarization/service.py:94)           # Retrieve complete candidate profile as JSON
+
+ASYNC DISPATCH (Celery):
+- [python.SummarizationService.summarize_session_async()](agents/summarization/service.py:138)       # Enqueue session summarization; returns task_id
+- [python.SummarizationService.summarize_profile_async()](agents/summarization/service.py:169)       # Enqueue profile summarization; returns task_id
+- [python.SummarizationService.get_task_status()](agents/summarization/service.py:196)               # Poll task status/result
+
+Celery Tasks:
+- [python.summarize_session_task()](agents/summarization/tasks.py:9)                                  # Executes summarize_session
+- [python.summarize_profile_task()](agents/summarization/tasks.py:51)                                 # Executes summarize_candidate_profile
+
+ORCHESTRATOR FLOW (end-to-end):
+Implemented in [python.build_graph()](agents/summarization/orchestrator.py:64) and invoked by [python.summarize_session()](agents/summarization/orchestrator.py:94).
+1. [python.load_session_data()](agents/summarization/orchestrator.py:20): Extract candidate_id, resume_text, and messages; normalize Q/A pairs
+2. [python.skill_node](agents/summarization/nodes/skill_node.py): Resume skills → Conversation skills → Merge → Analyze → Score
+3. [python.behavior_node](agents/summarization/nodes/behavior_node.py): Resume behaviors → Conversation behaviors → Merge → Score
+4. [python.infra_node](agents/summarization/nodes/infra_node.py): Extract infrastructure contexts
+5. [python.domain_node](agents/summarization/nodes/domain_node.py): Extract domain contexts
+6. [python.persist_summary_node](agents/summarization/nodes/persist_summary.py): Store results in DB (skills, behaviors, domain_contexts, infra_contexts)
+
+MODE SUPPORT:
+- SELF_REPORT (default): Extract from interview session
+- RECRUITER_REPORT: Extract from recruiter's perspective
+- (Other modes can be added)
+
+DB MODELS:
+- Skill                          # extracted skills with dimensions
+- SkillDimension                 # skill dimensions (duration, depth, autonomy, scale, etc.)
+- BehavioralObservation          # extracted behavioral observations
+- Evidence                       # evidence supporting skills/behaviors
+- DomainContext                  # domain/business context data
+- InfrastructureContext          # infrastructure/technical context data
+- CandidateProfileSummary        # stored markdown profile summaries
+
+TESTS (under tests/summarization/):
+- [python.orchestrator.py](tests/summarization/orchestrator.py)                       # test orchestrator orchestration
+- [python.profile_summary_agent.py](tests/summarization/profile_summary_agent.py)     # test profile summary generation
+- [python.get_candidate_profile_summary.py](tests/summarization/get_candidate_profile_summary.py)   # test retrieve/generate profile summary
+- [python.get_candidate_profile.py](tests/summarization/get_candidate_profile.py)     # test retrieve complete profile as JSON
+- [python.merge_extracted.py](tests/summarization/merge_extracted.py)                 # test merger
+- [python.score_skills.py](tests/summarization/score_skills.py)                       # test skill scoring
+- [python.analyze_skill_dimensions.py](tests/summarization/analyze_skill_dimensions.py) # test analyzing skill dimensions
+- inputs/outputs fixtures under tests/summarization/input and tests/summarization/output
+

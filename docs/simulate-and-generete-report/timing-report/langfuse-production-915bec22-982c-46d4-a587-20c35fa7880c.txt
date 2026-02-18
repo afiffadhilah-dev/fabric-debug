@@ -1,0 +1,417 @@
+================================================================================
+  LANGFUSE TIMING REPORT
+================================================================================
+  Session ID:     915bec22-982c-46d4-a587-20c35fa7880c
+  Environment:    production
+  Candidate ID:   sim-20260213-174528
+  Generated:      2026-02-13T10:50:24.359862Z
+  Traces Count:   13
+================================================================================
+
+================================================================================
+  SUMMARY
+================================================================================
+
+  Total Duration:   100.28s
+  Total Cost:       $0.035531
+  Total Tokens:     53,961
+    - Input:        45,169
+    - Output:       8,792
+
+  NODES TIMING SUMMARY:
+  Node                            Count      Total        Avg        Min        Max
+  ------------------------------------------------------------------------------
+  LangGraph                          13    100.28s      7.71s      5.57s     10.97s
+  parse_answer                       12     70.71s      5.89s      4.50s      7.35s
+  generate_question                  12     11.20s      933ms      623ms      1.78s
+  update_state                       12     10.96s      913ms       38ms      3.23s
+  analyze_resume_coverage             1      6.11s      6.11s      6.11s      6.11s
+  finalize                            1      642ms      642ms      642ms      642ms
+  select_gap                         12       89ms        7ms        5ms       12ms
+  __start__                          13       82ms        6ms        3ms        9ms
+  should_follow_up                   12       72ms        6ms        5ms       10ms
+  route_entry_point                  13       66ms        5ms        0µs        8ms
+  introduce                           1       40ms       40ms       40ms       40ms
+  should_continue_interview           1        6ms        6ms        6ms        6ms
+  route_after_greet                   1        1ms        1ms        1ms        1ms
+
+  LLM CALLS SUMMARY:
+  Model                                     Count   Duration         Cost     Tokens
+  --------------------------------------------------------------------------------
+  google/gemini-2.5-flash                      41     63.73s $   0.035531     53,961
+
+================================================================================
+  DETAILED BREAKDOWN (Time Focus)
+================================================================================
+
+  TRACE 1: LangGraph
+  ID: c1807b94513e6de295730db2202acf0f
+  Timestamp: 2026-02-13T10:48:01.099000+00:00
+  Total Duration: 8.93s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 8.93s
+      ├─ __start__ [CHAIN]
+      │    Duration: 7ms
+        ├─ route_entry_point [CHAIN]
+        │    Duration: 6ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 5.75s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 679ms  [1,909 → 13 = 1,922 tokens]
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 2.87s  [1,395 → 421 = 1,816 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 2.50s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 2.45s  [1,332 → 345 = 1,677 tokens]
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 10ms
+      ├─ finalize [CHAIN]
+      │    Duration: 642ms
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 630ms  [58 → 17 = 75 tokens]
+
+  TRACE 2: LangGraph
+  ID: 9baffe06619bbadfe6a735b2dc5a6042
+  Timestamp: 2026-02-13T10:47:43.374000+00:00
+  Total Duration: 10.97s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 10.97s
+      ├─ __start__ [CHAIN]
+      │    Duration: 9ms
+        ├─ route_entry_point [CHAIN]
+        │    Duration: 8ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 6.78s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 684ms  [1,802 → 13 = 1,815 tokens]
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 2.94s  [1,389 → 531 = 1,920 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 3.23s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 3.17s  [1,418 → 443 = 1,861 tokens]
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 6ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 7ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 913ms
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 904ms  [479 → 43 = 522 tokens]
+
+  TRACE 3: LangGraph
+  ID: d8385bb818243ff2b60173bc963188bd
+  Timestamp: 2026-02-13T10:47:29.491000+00:00
+  Total Duration: 7.93s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 7.93s
+      ├─ __start__ [CHAIN]
+      │    Duration: 7ms
+        ├─ route_entry_point [CHAIN]
+        │    Duration: 6ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 4.50s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 641ms  [1,610 → 13 = 1,623 tokens]
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 1.54s  [1,273 → 290 = 1,563 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 2.48s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 2.43s  [1,178 → 347 = 1,525 tokens]
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 6ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 10ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 890ms
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 880ms  [565 → 37 = 602 tokens]
+
+  TRACE 4: LangGraph
+  ID: cf1339b903e3b1b47eb31fba9687979d
+  Timestamp: 2026-02-13T10:47:15.372000+00:00
+  Total Duration: 9.10s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 9.10s
+      ├─ __start__ [CHAIN]
+      │    Duration: 7ms
+        ├─ route_entry_point [CHAIN]
+        │    Duration: 5ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 5.81s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 1.06s  [1,586 → 13 = 1,599 tokens]
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 2.48s  [1,294 → 400 = 1,694 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 2.42s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 2.37s  [1,188 → 299 = 1,487 tokens]
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 6ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 6ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 838ms
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 828ms  [437 → 40 = 477 tokens]
+
+  TRACE 5: LangGraph
+  ID: df0ca5740354258ebe052ed1b5c2ba2f
+  Timestamp: 2026-02-13T10:47:02.179000+00:00
+  Total Duration: 6.52s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 6.52s
+      ├─ __start__ [CHAIN]
+      │    Duration: 6ms
+        ├─ route_entry_point [CHAIN]
+        │    Duration: 6ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 5.64s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 746ms  [1,566 → 13 = 1,579 tokens]
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 2.07s  [1,196 → 417 = 1,613 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 40ms
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 6ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 8ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 794ms
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 786ms  [425 → 38 = 463 tokens]
+
+  TRACE 6: LangGraph
+  ID: 937b90694e345585cfdc81e82b04a092
+  Timestamp: 2026-02-13T10:46:51.411000+00:00
+  Total Duration: 6.54s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 6.54s
+      ├─ __start__ [CHAIN]
+      │    Duration: 6ms
+        ├─ route_entry_point [CHAIN]
+        │    Duration: 5ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 5.59s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 637ms  [1,588 → 13 = 1,601 tokens]
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 2.79s  [1,254 → 527 = 1,781 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 45ms
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 7ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 12ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 843ms
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 833ms  [514 → 45 = 559 tokens]
+
+  TRACE 7: LangGraph
+  ID: b4b1b79356b749e879a8330c31dba79e
+  Timestamp: 2026-02-13T10:46:40.176000+00:00
+  Total Duration: 6.60s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 6.60s
+      ├─ __start__ [CHAIN]
+      │    Duration: 6ms
+        ├─ route_entry_point [CHAIN]
+        │    Duration: 4ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 5.60s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 677ms  [1,726 → 13 = 1,739 tokens]
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 2.72s  [1,431 → 623 = 2,054 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 39ms
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 5ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 9ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 913ms
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 905ms  [497 → 34 = 531 tokens]
+
+  TRACE 8: LangGraph
+  ID: 7734b9551a7167973bfd6c7b750071d9
+  Timestamp: 2026-02-13T10:46:27.696000+00:00
+  Total Duration: 6.59s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 6.59s
+      ├─ __start__ [CHAIN]
+      │    Duration: 6ms
+        ├─ route_entry_point [CHAIN]
+        │    Duration: 5ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 5.83s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 1.10s  [1,581 → 13 = 1,594 tokens]
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 2.13s  [1,393 → 512 = 1,905 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 41ms
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 5ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 5ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 677ms
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 666ms  [492 → 28 = 520 tokens]
+
+  TRACE 9: LangGraph
+  ID: af7c20b6c0cc8806bdc96dbb13a8a744
+  Timestamp: 2026-02-13T10:46:15.724000+00:00
+  Total Duration: 7.77s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 7.77s
+      ├─ __start__ [CHAIN]
+      │    Duration: 6ms
+        ├─ route_entry_point [CHAIN]
+        │    Duration: 5ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 6.27s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 836ms  [1,534 → 13 = 1,547 tokens]
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 2.78s  [1,628 → 610 = 2,238 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 43ms
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 6ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 6ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 1.42s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 1.40s  [487 → 35 = 522 tokens]
+
+  TRACE 10: LangGraph
+  ID: b37d67be2552f6bacb2d2a6bebae012a
+  Timestamp: 2026-02-13T10:46:04.119000+00:00
+  Total Duration: 5.57s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 5.57s
+      ├─ __start__ [CHAIN]
+      │    Duration: 8ms
+        ├─ route_entry_point [CHAIN]
+        │    Duration: 5ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 4.79s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 557ms  [1,284 → 13 = 1,297 tokens]
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 2.45s  [1,362 → 587 = 1,949 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 46ms
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 5ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 6ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 682ms
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 674ms  [485 → 37 = 522 tokens]
+
+  TRACE 11: LangGraph
+  ID: 0962b871011cf5bce33d95870130c6b9
+  Timestamp: 2026-02-13T10:45:52.175000+00:00
+  Total Duration: 8.68s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 8.68s
+      ├─ __start__ [CHAIN]
+      │    Duration: 5ms
+        ├─ route_entry_point [CHAIN]
+        │    Duration: 5ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 6.80s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 651ms  [1,038 → 13 = 1,051 tokens]
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 3.93s  [1,567 → 865 = 2,432 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 46ms
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 5ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 5ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 1.78s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 1.77s  [486 → 31 = 517 tokens]
+
+  TRACE 12: LangGraph
+  ID: 18c084758ade1b030bac55d9f9bac85b
+  Timestamp: 2026-02-13T10:45:40.250000+00:00
+  Total Duration: 8.27s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 8.27s
+      ├─ __start__ [CHAIN]
+      │    Duration: 6ms
+        ├─ route_entry_point [CHAIN]
+        │    Duration: 6ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 7.35s
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 643ms  [704 → 13 = 717 tokens]
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 3.98s  [1,611 → 975 = 2,586 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 38ms
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 5ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 9ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 831ms
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 823ms  [348 → 39 = 387 tokens]
+
+  TRACE 13: LangGraph
+  ID: 2d419b8dacf84a524af8b936d71856f5
+  Timestamp: 2026-02-13T10:45:29.508000+00:00
+  Total Duration: 6.81s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 6.81s
+      ├─ __start__ [CHAIN]
+      │    Duration: 3ms
+        ├─ route_entry_point [CHAIN]
+        │    Duration: 0µs
+      ├─ introduce [CHAIN]
+      │    Duration: 40ms
+        ├─ route_after_greet [CHAIN]
+        │    Duration: 1ms
+      ├─ analyze_resume_coverage [CHAIN]
+      │    Duration: 6.11s
+        ├─ should_continue_interview [CHAIN]
+        │    Duration: 6ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 6ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 623ms
+        ├─ ChatOpenAI (google/gemini-2.5-flash)
+        │    Duration: 615ms  [59 → 20 = 79 tokens]
+
+================================================================================
+  END OF REPORT
+================================================================================

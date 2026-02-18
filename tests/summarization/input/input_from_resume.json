@@ -1,0 +1,28 @@
+{
+  "candidate_id": "TARGET ROLE: Software Engineer",
+  "skills": [
+    {
+      "name": "Java",
+      "evidence": [
+        {
+          "quote": "Primary language, 5+ years",
+          "timestamp": ""
+        },
+        {
+          "quote": "Java (Spring Boot, Hibernate, JPA) - 5+ years",
+          "timestamp": ""
+        }
+      ]
+    },
+    {
+      "name": "Node.js",
+      "evidence": [
+        {
+          "quote": "Node.js (Express.js, NestJS) - 4+ years",
+          "timestamp": ""
+        }
+      ]
+    }
+  ],
+  "behavior_observations": []
+}

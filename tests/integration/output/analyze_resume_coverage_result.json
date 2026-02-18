@@ -1,0 +1,1170 @@
+{
+  "input": {
+    "resume": "\nJohn Doe\nSoftware Engineer\n\nEXPERIENCE:\n- 3 years Python development\n- Built REST APIs with FastAPI\n- PostgreSQL database management\n\nSKILLS:\n- Python, JavaScript\n- Docker, AWS\n",
+    "question_set_id": "03b84681-2c75-4bbd-89ee-307861ec7b6b"
+  },
+  "output": {
+    "completeness_score": 0.0,
+    "total_questions": 34,
+    "gaps_count": 34,
+    "filled_count": 0,
+    "gaps": [
+      {
+        "category": "GENERAL INFORMATION",
+        "question_id": "7a251efa-792b-4ce2-8554-e7ee137083a4",
+        "question_text": "Can you briefly describe your current role, main responsibilities, and the types of products you’ve worked on?",
+        "what_assesses": [
+          "Career scope and relevance",
+          "Product and domain exposure"
+        ],
+        "expected_answer_pattern": "The candidate summarizes their role, seniority, team size, product type (B2B/B2C), and level of ownership without going into excessive detail.",
+        "is_required": true,
+        "order": 0,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "LEADERSHIP EXPERIENCE",
+        "question_id": "9809e453-32e1-4cbf-9812-07a311c168c8",
+        "question_text": "What leadership experience do you have, and how have you led or mentored others?",
+        "what_assesses": [
+          "People leadership vs. individual contribution",
+          "Coaching and decision-making skills"
+        ],
+        "expected_answer_pattern": "A strong candidate describes mentoring, code/design reviews, how many people they led, decision ownership, conflict resolution, and enabling team performance rather than just holding a title.",
+        "is_required": true,
+        "order": 1,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "PRODUCT ANALYTICS EXPERIENCE",
+        "question_id": "f2a45c94-2ec3-4891-a5d1-889950c9cb22",
+        "question_text": "What experience do you have with product analytics, and how have you used data to inform decisions?",
+        "what_assesses": [
+          "Data-driven mindset",
+          "Product impact awareness"
+        ],
+        "expected_answer_pattern": "The candidate references metrics such as DAU, retention, funnel conversion, or performance metrics, and explains how data influenced product or technical decisions.",
+        "is_required": true,
+        "order": 2,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "FRONTEND DEVELOPMENT",
+        "question_id": "21a55a47-494c-4212-a159-10ac856931c2",
+        "question_text": "What frontend languages and frameworks have you used? Which ones are your favorites and why?",
+        "what_assesses": [
+          "Technical depth",
+          "Decision rationale"
+        ],
+        "expected_answer_pattern": "The candidate lists relevant languages/frameworks and explains preferences based on maintainability, ecosystem, performance, or team productivity—not hype.",
+        "is_required": true,
+        "order": 3,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MOBILE DEVELOPMENT",
+        "question_id": "d7fdc448-fa80-4672-b6dc-2f77ba416cc3",
+        "question_text": "What mobile development experience do you have across Android, iOS, and cross-platform frameworks?",
+        "what_assesses": [
+          "Mobile ecosystem understanding",
+          "Practical implementation experience"
+        ],
+        "expected_answer_pattern": "The candidate clearly differentiates between native and cross-platform experience and explains their level of ownership in shipped apps.",
+        "is_required": true,
+        "order": 4,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MOBILE DEVELOPMENT",
+        "question_id": "c11fbe56-37e5-4636-80ef-465e8500a887",
+        "question_text": "What client-side state management have you used in Flutter (e.g., BLoC)?",
+        "what_assesses": [
+          "Depth beyond tutorials",
+          "Real production experience"
+        ],
+        "expected_answer_pattern": "The candidate explains why specific state management was chosen, how it scaled, and their role in real-world projects.",
+        "is_required": true,
+        "order": 5,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MOBILE DEVELOPMENT",
+        "question_id": "d1fb87d4-046f-45f8-b8df-47ce4c74cd98",
+        "question_text": "Can you describe a project or app you built using Flutter?",
+        "what_assesses": [
+          "Depth beyond tutorials",
+          "Real production experience"
+        ],
+        "expected_answer_pattern": "The candidate explains their role, challenges faced, and the outcome of the Flutter project.",
+        "is_required": true,
+        "order": 6,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MOBILE DEVELOPMENT",
+        "question_id": "bcb4009e-aff0-429d-bfba-a9bfabc13c47",
+        "question_text": "Have you built or maintained an iOS app using macOS/Xcode?",
+        "what_assesses": [
+          "Depth beyond tutorials",
+          "Real production experience"
+        ],
+        "expected_answer_pattern": "The candidate discusses their experience with Xcode, app maintenance, and their level of ownership.",
+        "is_required": true,
+        "order": 7,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "REACTIVE APPLICATIONS",
+        "question_id": "c3ea79e5-0212-4ef8-aebb-657192a8ef17",
+        "question_text": "What experience do you have building reactive or real-time applications?",
+        "what_assesses": [
+          "Real-time system design",
+          "Event-based thinking"
+        ],
+        "expected_answer_pattern": "The candidate explains use cases such as chat, live dashboards, or notifications, and why specific real-time technologies were chosen.",
+        "is_required": true,
+        "order": 8,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "REACTIVE APPLICATIONS",
+        "question_id": "a6e6550f-6cf9-46fe-98d5-f94147afcd9d",
+        "question_text": "What technologies did you use (e.g., WebSocket, SSE)?",
+        "what_assesses": [
+          "Real-time system design",
+          "Event-based thinking"
+        ],
+        "expected_answer_pattern": "The candidate lists specific technologies used and their rationale for choosing them.",
+        "is_required": true,
+        "order": 9,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "DATA CONSISTENCY",
+        "question_id": "bb29464e-95e5-408b-a480-a1b8f0747158",
+        "question_text": "How did you handle data conflicts in reactive systems, and what solutions did you implement?",
+        "what_assesses": [
+          "Distributed systems understanding",
+          "Problem-solving under concurrency"
+        ],
+        "expected_answer_pattern": "Mentions versioning, timestamps, reconciliation logic, idempotency, or eventual consistency strategies.",
+        "is_required": true,
+        "order": 10,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "ALTERNATIVES",
+        "question_id": "12ec6993-97c2-4ec2-b232-14c096e862ea",
+        "question_text": "Are there other technologies or approaches you’ve used to build reactive applications?",
+        "what_assesses": [
+          "Breadth of knowledge in reactive tech"
+        ],
+        "expected_answer_pattern": "The candidate shows breadth without over-claiming (e.g., message queues, polling, streaming).",
+        "is_required": true,
+        "order": 11,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "BACKEND DEVELOPMENT",
+        "question_id": "bcd0cbfb-1f0d-4965-9291-3eeabb6685ce",
+        "question_text": "What backend languages have you worked with?",
+        "what_assesses": [
+          "Backend depth",
+          "System thinking"
+        ],
+        "expected_answer_pattern": "The candidate provides a list of languages and reasoning for preferences or usage.",
+        "is_required": true,
+        "order": 12,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "BACKEND DEVELOPMENT",
+        "question_id": "cff77c67-3404-479b-aa17-668810bc3a95",
+        "question_text": "Which one is your favorite and why?",
+        "what_assesses": [
+          "Backend depth",
+          "System thinking"
+        ],
+        "expected_answer_pattern": "The candidate explains their preferred language with reasoning on performance, ecosystem, scalability, or team fit.",
+        "is_required": true,
+        "order": 13,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "SYSTEM DESIGN",
+        "question_id": "ccaf25f6-febc-492e-b28c-281993ba980b",
+        "question_text": "Have you built microservices from scratch?",
+        "what_assesses": [
+          "Architecture ownership",
+          "Scalability experience"
+        ],
+        "expected_answer_pattern": "The candidate explains motivations, trade-offs, and real constraints, not just buzzwords.",
+        "is_required": true,
+        "order": 14,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "SYSTEM DESIGN",
+        "question_id": "92b8f06f-8a19-44f3-be9e-63029d424efb",
+        "question_text": "Have you implemented event-driven architecture from scratch? Which message brokers did you use?",
+        "what_assesses": [
+          "Architecture ownership",
+          "Scalability experience"
+        ],
+        "expected_answer_pattern": "The candidate discusses their experience, the message brokers used, and their reasoning.",
+        "is_required": true,
+        "order": 15,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "DATABASE EXPERIENCE",
+        "question_id": "29bc5a6d-698f-49ad-8820-6953ccdf279f",
+        "question_text": "What SQL databases have you used?",
+        "what_assesses": [
+          "Data modeling breadth",
+          "Use-case alignment"
+        ],
+        "expected_answer_pattern": "The candidate explains why a database was chosen for a given use case.",
+        "is_required": true,
+        "order": 16,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "DATABASE EXPERIENCE",
+        "question_id": "c1db77bd-0219-49c8-9a90-58f7d40a71c6",
+        "question_text": "What NoSQL databases have you used?",
+        "what_assesses": [
+          "Data modeling breadth",
+          "Use-case alignment"
+        ],
+        "expected_answer_pattern": "The candidate explains why a NoSQL database was chosen for a given use case.",
+        "is_required": true,
+        "order": 17,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "DATABASE EXPERIENCE",
+        "question_id": "5bcc5dfc-ae5b-4ef6-9826-b1b18b9b98cb",
+        "question_text": "Any experience with graph databases like Neo4j?",
+        "what_assesses": [
+          "Data modeling breadth",
+          "Use-case alignment"
+        ],
+        "expected_answer_pattern": "The candidate describes their experience with graph databases and relevant use cases.",
+        "is_required": true,
+        "order": 18,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "DATABASE EXPERIENCE",
+        "question_id": "f082550c-e294-47e8-8828-1e2ab61976e4",
+        "question_text": "Experience with Cassandra or ClickHouse?",
+        "what_assesses": [
+          "Data modeling breadth",
+          "Use-case alignment"
+        ],
+        "expected_answer_pattern": "The candidate discusses their experience with these databases and their suitability for specific scenarios.",
+        "is_required": true,
+        "order": 19,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MESSAGING & TOPOLOGY",
+        "question_id": "f09c06f4-06a7-48fc-aecc-2004ea3b06aa",
+        "question_text": "Experience with Kafka or RabbitMQ as producer/consumer?",
+        "what_assesses": [
+          "Production readiness",
+          "Infrastructure awareness"
+        ],
+        "expected_answer_pattern": "The candidate explains their experience, setup, and operational considerations.",
+        "is_required": true,
+        "order": 20,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MESSAGING & TOPOLOGY",
+        "question_id": "922a1976-5487-4094-9f4d-94dc1295db25",
+        "question_text": "Can you describe database topology you’ve worked with (Docker/Kubernetes, clusters)?",
+        "what_assesses": [
+          "Production readiness",
+          "Infrastructure awareness"
+        ],
+        "expected_answer_pattern": "The candidate explains their experience with deployment topologies, replication, and operational considerations.",
+        "is_required": true,
+        "order": 21,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MESSAGING & TOPOLOGY",
+        "question_id": "6c687b92-c5ab-478a-a5ef-86ff647d4993",
+        "question_text": "Have you used single-node or multi-node topologies?",
+        "what_assesses": [
+          "Production readiness",
+          "Infrastructure awareness"
+        ],
+        "expected_answer_pattern": "The candidate discusses their experience with different topologies and their implications.",
+        "is_required": true,
+        "order": 22,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MESSAGING & TOPOLOGY",
+        "question_id": "668e69db-602d-4d60-a346-1828ad72a772",
+        "question_text": "Familiarity with master-master or master-slave setups?",
+        "what_assesses": [
+          "Production readiness",
+          "Infrastructure awareness"
+        ],
+        "expected_answer_pattern": "The candidate describes their experience with replication setups and operational trade-offs.",
+        "is_required": true,
+        "order": 23,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "API DESIGN",
+        "question_id": "0103edcb-d99d-4eb7-8335-2bb23435477e",
+        "question_text": "What API layers have you worked with beyond REST and GraphQL?",
+        "what_assesses": [
+          "API design maturity",
+          "Integration thinking"
+        ],
+        "expected_answer_pattern": "Mentions RPC, gRPC, messaging-based APIs, or internal service contracts with practical reasoning.",
+        "is_required": true,
+        "order": 24,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "API DESIGN",
+        "question_id": "19fca1ac-32e2-42e2-8516-b0c81559c037",
+        "question_text": "What is your experience with GraphQL as a consumer or producer?",
+        "what_assesses": [
+          "API design maturity",
+          "Integration thinking"
+        ],
+        "expected_answer_pattern": "The candidate discusses their role with GraphQL, whether consuming or producing, and their understanding of its use cases.",
+        "is_required": true,
+        "order": 25,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "PRODUCTION SCALE",
+        "question_id": "f1fd5002-a17f-40f0-898e-15e47df1d5f9",
+        "question_text": "Tell us about your biggest production project. How large was the system in terms of users or DAU?",
+        "what_assesses": [
+          "Real-world scale",
+          "Ownership under pressure"
+        ],
+        "expected_answer_pattern": "The candidate explains scale, challenges, and impact without exaggeration.",
+        "is_required": true,
+        "order": 26,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "DEPLOYMENT PROCESS (CI/CD)",
+        "question_id": "e9a11035-90bf-48cd-9f07-31b5f00db56b",
+        "question_text": "What CI/CD tools or deployment processes have you used or built?",
+        "what_assesses": [
+          "DevOps awareness",
+          "Automation mindset"
+        ],
+        "expected_answer_pattern": "Mentions pipelines, testing gates, rollback strategies, and environment separation.",
+        "is_required": true,
+        "order": 27,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "TESTING PRACTICES",
+        "question_id": "8092a2f2-fa5e-4521-9fd6-b3ba3d9a4470",
+        "question_text": "What testing tools have you used?",
+        "what_assesses": [
+          "Engineering discipline",
+          "Quality mindset"
+        ],
+        "expected_answer_pattern": "Shows practical usage and trade-offs, not dogmatic answers.",
+        "is_required": true,
+        "order": 28,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "TESTING PRACTICES",
+        "question_id": "926293c5-4681-466b-8b89-398821b65270",
+        "question_text": "Do you practice Behavior-Driven Development (BDD)?",
+        "what_assesses": [
+          "Engineering discipline",
+          "Quality mindset"
+        ],
+        "expected_answer_pattern": "The candidate discusses their approach to BDD and its implementation.",
+        "is_required": true,
+        "order": 29,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "TESTING PRACTICES",
+        "question_id": "91601b27-9bce-493a-a0a0-98eaca845583",
+        "question_text": "Do you practice Test-Driven Development (TDD)?",
+        "what_assesses": [
+          "Engineering discipline",
+          "Quality mindset"
+        ],
+        "expected_answer_pattern": "The candidate discusses their experience with TDD and its role in their workflow.",
+        "is_required": true,
+        "order": 30,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "HIRING & TEAM BUILDING",
+        "question_id": "01f6607b-5743-4466-8309-c5301c454333",
+        "question_text": "Have you been involved in hiring engineers?",
+        "what_assesses": [
+          "Talent evaluation skills",
+          "Team-building experience"
+        ],
+        "expected_answer_pattern": "The candidate emphasizes fair, signal-driven assessments aligned with real work.",
+        "is_required": true,
+        "order": 31,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "HIRING & TEAM BUILDING",
+        "question_id": "50e0144b-e790-47a0-bf3e-3aee0ca7e546",
+        "question_text": "What kind of assessment or technical tests have you used?",
+        "what_assesses": [
+          "Talent evaluation skills",
+          "Team-building experience"
+        ],
+        "expected_answer_pattern": "The candidate describes their approach to assessments and tests used.",
+        "is_required": true,
+        "order": 32,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "PERFORMANCE MANAGEMENT",
+        "question_id": "d3e2dceb-13b9-4140-8409-3127d1fdbb2f",
+        "question_text": "What experience do you have with performance management or KPIs for engineers?",
+        "what_assesses": [
+          "Leadership maturity",
+          "Long-term team effectiveness"
+        ],
+        "expected_answer_pattern": "Mentions goal setting, feedback loops, growth plans, and balancing delivery with sustainability.",
+        "is_required": true,
+        "order": 33,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      }
+    ],
+    "all_gaps": [
+      {
+        "category": "GENERAL INFORMATION",
+        "question_id": "7a251efa-792b-4ce2-8554-e7ee137083a4",
+        "question_text": "Can you briefly describe your current role, main responsibilities, and the types of products you’ve worked on?",
+        "what_assesses": [
+          "Career scope and relevance",
+          "Product and domain exposure"
+        ],
+        "expected_answer_pattern": "The candidate summarizes their role, seniority, team size, product type (B2B/B2C), and level of ownership without going into excessive detail.",
+        "is_required": true,
+        "order": 0,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "LEADERSHIP EXPERIENCE",
+        "question_id": "9809e453-32e1-4cbf-9812-07a311c168c8",
+        "question_text": "What leadership experience do you have, and how have you led or mentored others?",
+        "what_assesses": [
+          "People leadership vs. individual contribution",
+          "Coaching and decision-making skills"
+        ],
+        "expected_answer_pattern": "A strong candidate describes mentoring, code/design reviews, how many people they led, decision ownership, conflict resolution, and enabling team performance rather than just holding a title.",
+        "is_required": true,
+        "order": 1,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "PRODUCT ANALYTICS EXPERIENCE",
+        "question_id": "f2a45c94-2ec3-4891-a5d1-889950c9cb22",
+        "question_text": "What experience do you have with product analytics, and how have you used data to inform decisions?",
+        "what_assesses": [
+          "Data-driven mindset",
+          "Product impact awareness"
+        ],
+        "expected_answer_pattern": "The candidate references metrics such as DAU, retention, funnel conversion, or performance metrics, and explains how data influenced product or technical decisions.",
+        "is_required": true,
+        "order": 2,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "FRONTEND DEVELOPMENT",
+        "question_id": "21a55a47-494c-4212-a159-10ac856931c2",
+        "question_text": "What frontend languages and frameworks have you used? Which ones are your favorites and why?",
+        "what_assesses": [
+          "Technical depth",
+          "Decision rationale"
+        ],
+        "expected_answer_pattern": "The candidate lists relevant languages/frameworks and explains preferences based on maintainability, ecosystem, performance, or team productivity—not hype.",
+        "is_required": true,
+        "order": 3,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MOBILE DEVELOPMENT",
+        "question_id": "d7fdc448-fa80-4672-b6dc-2f77ba416cc3",
+        "question_text": "What mobile development experience do you have across Android, iOS, and cross-platform frameworks?",
+        "what_assesses": [
+          "Mobile ecosystem understanding",
+          "Practical implementation experience"
+        ],
+        "expected_answer_pattern": "The candidate clearly differentiates between native and cross-platform experience and explains their level of ownership in shipped apps.",
+        "is_required": true,
+        "order": 4,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MOBILE DEVELOPMENT",
+        "question_id": "c11fbe56-37e5-4636-80ef-465e8500a887",
+        "question_text": "What client-side state management have you used in Flutter (e.g., BLoC)?",
+        "what_assesses": [
+          "Depth beyond tutorials",
+          "Real production experience"
+        ],
+        "expected_answer_pattern": "The candidate explains why specific state management was chosen, how it scaled, and their role in real-world projects.",
+        "is_required": true,
+        "order": 5,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MOBILE DEVELOPMENT",
+        "question_id": "d1fb87d4-046f-45f8-b8df-47ce4c74cd98",
+        "question_text": "Can you describe a project or app you built using Flutter?",
+        "what_assesses": [
+          "Depth beyond tutorials",
+          "Real production experience"
+        ],
+        "expected_answer_pattern": "The candidate explains their role, challenges faced, and the outcome of the Flutter project.",
+        "is_required": true,
+        "order": 6,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MOBILE DEVELOPMENT",
+        "question_id": "bcb4009e-aff0-429d-bfba-a9bfabc13c47",
+        "question_text": "Have you built or maintained an iOS app using macOS/Xcode?",
+        "what_assesses": [
+          "Depth beyond tutorials",
+          "Real production experience"
+        ],
+        "expected_answer_pattern": "The candidate discusses their experience with Xcode, app maintenance, and their level of ownership.",
+        "is_required": true,
+        "order": 7,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "REACTIVE APPLICATIONS",
+        "question_id": "c3ea79e5-0212-4ef8-aebb-657192a8ef17",
+        "question_text": "What experience do you have building reactive or real-time applications?",
+        "what_assesses": [
+          "Real-time system design",
+          "Event-based thinking"
+        ],
+        "expected_answer_pattern": "The candidate explains use cases such as chat, live dashboards, or notifications, and why specific real-time technologies were chosen.",
+        "is_required": true,
+        "order": 8,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "REACTIVE APPLICATIONS",
+        "question_id": "a6e6550f-6cf9-46fe-98d5-f94147afcd9d",
+        "question_text": "What technologies did you use (e.g., WebSocket, SSE)?",
+        "what_assesses": [
+          "Real-time system design",
+          "Event-based thinking"
+        ],
+        "expected_answer_pattern": "The candidate lists specific technologies used and their rationale for choosing them.",
+        "is_required": true,
+        "order": 9,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "DATA CONSISTENCY",
+        "question_id": "bb29464e-95e5-408b-a480-a1b8f0747158",
+        "question_text": "How did you handle data conflicts in reactive systems, and what solutions did you implement?",
+        "what_assesses": [
+          "Distributed systems understanding",
+          "Problem-solving under concurrency"
+        ],
+        "expected_answer_pattern": "Mentions versioning, timestamps, reconciliation logic, idempotency, or eventual consistency strategies.",
+        "is_required": true,
+        "order": 10,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "ALTERNATIVES",
+        "question_id": "12ec6993-97c2-4ec2-b232-14c096e862ea",
+        "question_text": "Are there other technologies or approaches you’ve used to build reactive applications?",
+        "what_assesses": [
+          "Breadth of knowledge in reactive tech"
+        ],
+        "expected_answer_pattern": "The candidate shows breadth without over-claiming (e.g., message queues, polling, streaming).",
+        "is_required": true,
+        "order": 11,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "BACKEND DEVELOPMENT",
+        "question_id": "bcd0cbfb-1f0d-4965-9291-3eeabb6685ce",
+        "question_text": "What backend languages have you worked with?",
+        "what_assesses": [
+          "Backend depth",
+          "System thinking"
+        ],
+        "expected_answer_pattern": "The candidate provides a list of languages and reasoning for preferences or usage.",
+        "is_required": true,
+        "order": 12,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "BACKEND DEVELOPMENT",
+        "question_id": "cff77c67-3404-479b-aa17-668810bc3a95",
+        "question_text": "Which one is your favorite and why?",
+        "what_assesses": [
+          "Backend depth",
+          "System thinking"
+        ],
+        "expected_answer_pattern": "The candidate explains their preferred language with reasoning on performance, ecosystem, scalability, or team fit.",
+        "is_required": true,
+        "order": 13,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "SYSTEM DESIGN",
+        "question_id": "ccaf25f6-febc-492e-b28c-281993ba980b",
+        "question_text": "Have you built microservices from scratch?",
+        "what_assesses": [
+          "Architecture ownership",
+          "Scalability experience"
+        ],
+        "expected_answer_pattern": "The candidate explains motivations, trade-offs, and real constraints, not just buzzwords.",
+        "is_required": true,
+        "order": 14,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "SYSTEM DESIGN",
+        "question_id": "92b8f06f-8a19-44f3-be9e-63029d424efb",
+        "question_text": "Have you implemented event-driven architecture from scratch? Which message brokers did you use?",
+        "what_assesses": [
+          "Architecture ownership",
+          "Scalability experience"
+        ],
+        "expected_answer_pattern": "The candidate discusses their experience, the message brokers used, and their reasoning.",
+        "is_required": true,
+        "order": 15,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "DATABASE EXPERIENCE",
+        "question_id": "29bc5a6d-698f-49ad-8820-6953ccdf279f",
+        "question_text": "What SQL databases have you used?",
+        "what_assesses": [
+          "Data modeling breadth",
+          "Use-case alignment"
+        ],
+        "expected_answer_pattern": "The candidate explains why a database was chosen for a given use case.",
+        "is_required": true,
+        "order": 16,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "DATABASE EXPERIENCE",
+        "question_id": "c1db77bd-0219-49c8-9a90-58f7d40a71c6",
+        "question_text": "What NoSQL databases have you used?",
+        "what_assesses": [
+          "Data modeling breadth",
+          "Use-case alignment"
+        ],
+        "expected_answer_pattern": "The candidate explains why a NoSQL database was chosen for a given use case.",
+        "is_required": true,
+        "order": 17,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "DATABASE EXPERIENCE",
+        "question_id": "5bcc5dfc-ae5b-4ef6-9826-b1b18b9b98cb",
+        "question_text": "Any experience with graph databases like Neo4j?",
+        "what_assesses": [
+          "Data modeling breadth",
+          "Use-case alignment"
+        ],
+        "expected_answer_pattern": "The candidate describes their experience with graph databases and relevant use cases.",
+        "is_required": true,
+        "order": 18,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "DATABASE EXPERIENCE",
+        "question_id": "f082550c-e294-47e8-8828-1e2ab61976e4",
+        "question_text": "Experience with Cassandra or ClickHouse?",
+        "what_assesses": [
+          "Data modeling breadth",
+          "Use-case alignment"
+        ],
+        "expected_answer_pattern": "The candidate discusses their experience with these databases and their suitability for specific scenarios.",
+        "is_required": true,
+        "order": 19,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MESSAGING & TOPOLOGY",
+        "question_id": "f09c06f4-06a7-48fc-aecc-2004ea3b06aa",
+        "question_text": "Experience with Kafka or RabbitMQ as producer/consumer?",
+        "what_assesses": [
+          "Production readiness",
+          "Infrastructure awareness"
+        ],
+        "expected_answer_pattern": "The candidate explains their experience, setup, and operational considerations.",
+        "is_required": true,
+        "order": 20,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MESSAGING & TOPOLOGY",
+        "question_id": "922a1976-5487-4094-9f4d-94dc1295db25",
+        "question_text": "Can you describe database topology you’ve worked with (Docker/Kubernetes, clusters)?",
+        "what_assesses": [
+          "Production readiness",
+          "Infrastructure awareness"
+        ],
+        "expected_answer_pattern": "The candidate explains their experience with deployment topologies, replication, and operational considerations.",
+        "is_required": true,
+        "order": 21,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MESSAGING & TOPOLOGY",
+        "question_id": "6c687b92-c5ab-478a-a5ef-86ff647d4993",
+        "question_text": "Have you used single-node or multi-node topologies?",
+        "what_assesses": [
+          "Production readiness",
+          "Infrastructure awareness"
+        ],
+        "expected_answer_pattern": "The candidate discusses their experience with different topologies and their implications.",
+        "is_required": true,
+        "order": 22,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "MESSAGING & TOPOLOGY",
+        "question_id": "668e69db-602d-4d60-a346-1828ad72a772",
+        "question_text": "Familiarity with master-master or master-slave setups?",
+        "what_assesses": [
+          "Production readiness",
+          "Infrastructure awareness"
+        ],
+        "expected_answer_pattern": "The candidate describes their experience with replication setups and operational trade-offs.",
+        "is_required": true,
+        "order": 23,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "API DESIGN",
+        "question_id": "0103edcb-d99d-4eb7-8335-2bb23435477e",
+        "question_text": "What API layers have you worked with beyond REST and GraphQL?",
+        "what_assesses": [
+          "API design maturity",
+          "Integration thinking"
+        ],
+        "expected_answer_pattern": "Mentions RPC, gRPC, messaging-based APIs, or internal service contracts with practical reasoning.",
+        "is_required": true,
+        "order": 24,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "API DESIGN",
+        "question_id": "19fca1ac-32e2-42e2-8516-b0c81559c037",
+        "question_text": "What is your experience with GraphQL as a consumer or producer?",
+        "what_assesses": [
+          "API design maturity",
+          "Integration thinking"
+        ],
+        "expected_answer_pattern": "The candidate discusses their role with GraphQL, whether consuming or producing, and their understanding of its use cases.",
+        "is_required": true,
+        "order": 25,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "PRODUCTION SCALE",
+        "question_id": "f1fd5002-a17f-40f0-898e-15e47df1d5f9",
+        "question_text": "Tell us about your biggest production project. How large was the system in terms of users or DAU?",
+        "what_assesses": [
+          "Real-world scale",
+          "Ownership under pressure"
+        ],
+        "expected_answer_pattern": "The candidate explains scale, challenges, and impact without exaggeration.",
+        "is_required": true,
+        "order": 26,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "DEPLOYMENT PROCESS (CI/CD)",
+        "question_id": "e9a11035-90bf-48cd-9f07-31b5f00db56b",
+        "question_text": "What CI/CD tools or deployment processes have you used or built?",
+        "what_assesses": [
+          "DevOps awareness",
+          "Automation mindset"
+        ],
+        "expected_answer_pattern": "Mentions pipelines, testing gates, rollback strategies, and environment separation.",
+        "is_required": true,
+        "order": 27,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "TESTING PRACTICES",
+        "question_id": "8092a2f2-fa5e-4521-9fd6-b3ba3d9a4470",
+        "question_text": "What testing tools have you used?",
+        "what_assesses": [
+          "Engineering discipline",
+          "Quality mindset"
+        ],
+        "expected_answer_pattern": "Shows practical usage and trade-offs, not dogmatic answers.",
+        "is_required": true,
+        "order": 28,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "TESTING PRACTICES",
+        "question_id": "926293c5-4681-466b-8b89-398821b65270",
+        "question_text": "Do you practice Behavior-Driven Development (BDD)?",
+        "what_assesses": [
+          "Engineering discipline",
+          "Quality mindset"
+        ],
+        "expected_answer_pattern": "The candidate discusses their approach to BDD and its implementation.",
+        "is_required": true,
+        "order": 29,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "TESTING PRACTICES",
+        "question_id": "91601b27-9bce-493a-a0a0-98eaca845583",
+        "question_text": "Do you practice Test-Driven Development (TDD)?",
+        "what_assesses": [
+          "Engineering discipline",
+          "Quality mindset"
+        ],
+        "expected_answer_pattern": "The candidate discusses their experience with TDD and its role in their workflow.",
+        "is_required": true,
+        "order": 30,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "HIRING & TEAM BUILDING",
+        "question_id": "01f6607b-5743-4466-8309-c5301c454333",
+        "question_text": "Have you been involved in hiring engineers?",
+        "what_assesses": [
+          "Talent evaluation skills",
+          "Team-building experience"
+        ],
+        "expected_answer_pattern": "The candidate emphasizes fair, signal-driven assessments aligned with real work.",
+        "is_required": true,
+        "order": 31,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "HIRING & TEAM BUILDING",
+        "question_id": "50e0144b-e790-47a0-bf3e-3aee0ca7e546",
+        "question_text": "What kind of assessment or technical tests have you used?",
+        "what_assesses": [
+          "Talent evaluation skills",
+          "Team-building experience"
+        ],
+        "expected_answer_pattern": "The candidate describes their approach to assessments and tests used.",
+        "is_required": true,
+        "order": 32,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      },
+      {
+        "category": "PERFORMANCE MANAGEMENT",
+        "question_id": "d3e2dceb-13b9-4140-8409-3127d1fdbb2f",
+        "question_text": "What experience do you have with performance management or KPIs for engineers?",
+        "what_assesses": [
+          "Leadership maturity",
+          "Long-term team effectiveness"
+        ],
+        "expected_answer_pattern": "Mentions goal setting, feedback loops, growth plans, and balancing delivery with sustainability.",
+        "is_required": true,
+        "order": 33,
+        "severity": 1.0,
+        "resume_filled": false,
+        "resume_evidence": null,
+        "probes_attempted": 0,
+        "max_probes": 2
+      }
+    ]
+  }
+}

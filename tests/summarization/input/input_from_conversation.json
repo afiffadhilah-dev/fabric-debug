@@ -1,0 +1,24 @@
+{
+  "candidate_id": "string",
+  "skills": [
+    {
+      "name": "NestJS",
+      "evidence": [
+        {
+          "quote": "I implemented the NestJS APIs",
+          "timestamp": "2025-12-19T09:01:20.000000"
+        }
+      ]
+    },
+    {
+      "name": "Next.js",
+      "evidence": [
+        {
+          "quote": "built the frontend flow in Next.js",
+          "timestamp": "2025-12-19T09:01:20.000000"
+        }
+      ]
+    }
+  ],
+  "behavior_observations": []
+}
