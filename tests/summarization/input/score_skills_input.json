@@ -1,0 +1,46 @@
+{
+  "candidate_id": "TARGET ROLE: Software Engineer",
+  "skills": [
+    {
+      "name": "java",
+      "evidence": [
+        {
+          "quote": "Primary language, 5+ years",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "Java (Spring Boot, Hibernate, JPA) - 5+ years",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "node.js",
+      "evidence": [
+        {
+          "quote": "Node.js (Express.js, NestJS) - 4+ years",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "I implemented the NestJS APIs",
+          "timestamp": "2025-12-19T09:01:20.000000",
+          "source": "conversation"
+        }
+      ]
+    },
+    {
+      "name": "Next.js",
+      "evidence": [
+        {
+          "quote": "built the frontend flow in Next.js",
+          "timestamp": "2025-12-19T09:01:20.000000",
+          "source": "conversation"
+        }
+      ]
+    }
+  ],
+  "behavior_observations": []
+}

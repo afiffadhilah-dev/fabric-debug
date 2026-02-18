@@ -1,0 +1,307 @@
+Sprint 3 → Sprint 4: Comprehensive Performance Analysis
+=========================================================
+Generated: 2026-02-11
+
+Background
+──────────
+Sprint 3: Baseline deployment. STG hosted on Render free tier (limited CPU/memory,
+  cold starts, shared resources). DEV running locally on a higher-spec machine.
+  The Render free tier significantly impacts STG latency — all STG numbers should
+  be read with this infrastructure constraint in mind.
+
+Sprint 4: Applied optimizations to reduce latency:
+  - Logic changes: removed expensive LLM call from analyze_resume_coverage,
+    streamlined update_state, trimmed parse_answer prompts
+  - Cache system: pre-computed resume analysis results to avoid redundant LLM calls
+  - Graph restructuring: replaced is_first_run with introduce + route_entry_point
+
+  After these optimizations, parse_answer remained the dominant bottleneck (~80% of
+  trace time). To push latency further, we experimented with gemini-2.5-flash as an
+  alternative LLM model — which showed significantly better response times.
+  Both STG (Render) and DEV (local) runs were done for comparison.
+
+Note on Normalization:
+  Interviews are dynamic — each session can have a different number of questions
+  (traces). Comparing raw session totals (cost, tokens) is misleading because a
+  14-question session will naturally use more tokens than a 10-question one.
+  All metrics below are normalized PER-TRACE (per question turn) for fair comparison.
+
+Data Sources
+─────────────
+Sprint 3:
+  STG (Render free tier):
+    7491dc8e  (gpt-4.1-nano, 14 traces)
+    655adbfc  (gpt-4.1-nano, 14 traces)
+  DEV (local):
+    ba93dc2f  (gpt-4.1-nano, 13 traces)
+
+Sprint 4:
+  STG (Render free tier):
+    59ee7334  (gpt-4.1-nano, 10 traces)
+    4def7240  (gpt-4.1-nano, 13 traces)
+    c0fe8f17  (gpt-4.1-nano, 12 traces)
+    1c135394  (gpt-4.1-nano, 13 traces)
+    eda77400  (gemini-2.5-flash, 13 traces)
+  DEV (local):
+    b3a7b853  (gpt-4.1-nano, 12 traces)
+    bdc79907  (gemini-2.5-flash, 12 traces)
+
+================================================================================
+  ALL SESSIONS SUMMARY TABLE
+================================================================================
+
+┌──────────┬──────────┬──────────────────┬─────┬────────┬──────────┬────────────┬───────────┐
+│  Sprint  │ Session  │      Model       │ Env │ Traces │ Avg Time │ Cost/Trace │ Tok/Trace │
+│          │          │                  │     │        │ /Trace   │            │           │
+├──────────┼──────────┼──────────────────┼─────┼────────┼──────────┼────────────┼───────────┤
+│ Sprint 3 │ 7491dc8e │ gpt-4.1-nano     │ STG │   14   │  20.00s  │ $0.001071  │   6,863   │
+│ Sprint 3 │ 655adbfc │ gpt-4.1-nano     │ STG │   14   │  18.94s  │ $0.001030  │   6,683   │
+│ Sprint 3 │ ba93dc2f │ gpt-4.1-nano     │ DEV │   13   │  12.73s  │ $0.000866  │   5,570   │
+├──────────┼──────────┼──────────────────┼─────┼────────┼──────────┼────────────┼───────────┤
+│ Sprint 4 │ 59ee7334 │ gpt-4.1-nano     │ STG │   10   │  14.99s  │ $0.000671  │   4,466   │
+│ Sprint 4 │ 4def7240 │ gpt-4.1-nano     │ STG │   13   │  15.15s  │ $0.000772  │   5,037   │
+│ Sprint 4 │ c0fe8f17 │ gpt-4.1-nano     │ STG │   12   │  15.78s  │ $0.000797  │   5,023   │
+│ Sprint 4 │ 1c135394 │ gpt-4.1-nano     │ STG │   13   │  15.66s  │ $0.000844  │   5,088   │
+│ Sprint 4 │ eda77400 │ gemini-2.5-flash │ STG │   13   │  13.29s  │ $0.004174  │   5,489   │
+│ Sprint 4 │ b3a7b853 │ gpt-4.1-nano     │ DEV │   12   │  10.78s  │ $0.000703  │   4,714   │
+│ Sprint 4 │ bdc79907 │ gemini-2.5-flash │ DEV │   12   │  13.24s  │      n/a*  │     n/a*  │
+└──────────┴──────────┴──────────────────┴─────┴────────┴──────────┴────────────┴───────────┘
+* bdc79907: Langfuse not tracking tokens for most Gemini calls — cost/tokens unreliable
+
+================================================================================
+  1. STAGING (Render): Sprint 3 vs Sprint 4 (gpt-4.1-nano, apples-to-apples)
+================================================================================
+
+Both sprints on same Render free tier — isolates the effect of code optimizations.
+All metrics normalized per-trace to account for different interview lengths.
+
+┌──────────────────────┬─────────────────────┬──────────────────────┬────────┐
+│        Metric        │ Sprint 3 (avg of 2) │ Sprint 4 (avg of 4)  │ Change │
+├──────────────────────┼─────────────────────┼──────────────────────┼────────┤
+│ Avg Duration / Trace │ 19.47s              │ 15.40s               │ -20.9% │
+├──────────────────────┼─────────────────────┼──────────────────────┼────────┤
+│ Cost / Trace         │ $0.001051           │ $0.000771            │ -26.6% │
+├──────────────────────┼─────────────────────┼──────────────────────┼────────┤
+│ Tokens / Trace       │ 6,773               │ 4,904                │ -27.6% │
+├──────────────────────┼─────────────────────┼──────────────────────┼────────┤
+│ LLM Calls / Trace    │ 3.79                │ 3.60                 │ -5.0%  │
+└──────────────────────┴─────────────────────┴──────────────────────┴────────┘
+
+Node-Level Breakdown (per-call averages) — STG gpt-4.1-nano:
+┌─────────────────────────┬────────┬────────┬────────┬───────────────────────────────────────────────┐
+│          Node           │ Before │ After  │ Change │                    Notes                       │
+├─────────────────────────┼────────┼────────┼────────┼───────────────────────────────────────────────┤
+│ analyze_resume_coverage │ 29.22s │ 9.42s  │ -67.8% │ LLM call (~25s, ~6,685 tok) replaced by cache │
+├─────────────────────────┼────────┼────────┼────────┼───────────────────────────────────────────────┤
+│ update_state            │ 4.19s  │ 1.47s  │ -64.9% │ Logic streamlined, ~2.7s savings per trace    │
+├─────────────────────────┼────────┼────────┼────────┼───────────────────────────────────────────────┤
+│ parse_answer            │ 12.10s │ 11.97s │ -1.1%  │ Prompt trimming saved tokens but not latency  │
+├─────────────────────────┼────────┼────────┼────────┼───────────────────────────────────────────────┤
+│ generate_question       │ 924ms  │ 955ms  │ +3.4%  │ No significant change                         │
+├─────────────────────────┼────────┼────────┼────────┼───────────────────────────────────────────────┤
+│ select_gap              │ 29ms   │ 31ms   │ +7%    │ Negligible                                    │
+└─────────────────────────┴────────┴────────┴────────┴───────────────────────────────────────────────┘
+
+================================================================================
+  2. DEV (local): Sprint 3 vs Sprint 4 (gpt-4.1-nano, apples-to-apples)
+================================================================================
+
+Both sprints on same local machine — faster baseline due to better hardware.
+
+┌──────────────────────┬──────────────┬──────────────┬────────┐
+│        Metric        │ Sprint 3 (1) │ Sprint 4 (1) │ Change │
+├──────────────────────┼──────────────┼──────────────┼────────┤
+│ Avg Duration / Trace │ 12.73s       │ 10.78s       │ -15.3% │
+├──────────────────────┼──────────────┼──────────────┼────────┤
+│ Cost / Trace         │ $0.000866    │ $0.000703    │ -18.8% │
+├──────────────────────┼──────────────┼──────────────┼────────┤
+│ Tokens / Trace       │ 5,570        │ 4,714        │ -15.4% │
+├──────────────────────┼──────────────┼──────────────┼────────┤
+│ LLM Calls / Trace    │ 3.54         │ 3.75         │ +5.9%  │
+└──────────────────────┴──────────────┴──────────────┴────────┘
+
+Node-Level Breakdown — DEV gpt-4.1-nano:
+┌─────────────────────────┬────────┬────────┬─────────┬─────────────────────────────────────────────────┐
+│          Node           │ Before │ After  │  Change │                    Notes                         │
+├─────────────────────────┼────────┼────────┼─────────┼─────────────────────────────────────────────────┤
+│ analyze_resume_coverage │ 26.16s │ 8ms    │ -99.97% │ Cache fully effective locally — near-instant     │
+├─────────────────────────┼────────┼────────┼─────────┼─────────────────────────────────────────────────┤
+│ update_state            │ 70ms   │ 26ms   │ -62.9%  │ Already fast locally in Sprint 3                │
+├─────────────────────────┼────────┼────────┼─────────┼─────────────────────────────────────────────────┤
+│ parse_answer            │ 10.36s │ 10.39s │ +0.3%   │ Unchanged — still the main bottleneck           │
+├─────────────────────────┼────────┼────────┼─────────┼─────────────────────────────────────────────────┤
+│ generate_question       │ 1.03s  │ 1.14s  │ +10.7%  │ Slight increase, not significant                │
+├─────────────────────────┼────────┼────────┼─────────┼─────────────────────────────────────────────────┤
+│ select_gap              │ 5ms    │ 5ms    │ 0%      │ Negligible                                      │
+└─────────────────────────┴────────┴────────┴─────────┴─────────────────────────────────────────────────┘
+
+Note: Sprint 3 DEV was already much faster than Sprint 3 STG (12.73s vs 19.47s).
+This gap is primarily due to Render free tier overhead — slower compute, higher
+network latency, and cold-start penalties inflate STG times across all nodes.
+
+================================================================================
+  3. MODEL EXPERIMENT: gpt-4.1-nano vs gemini-2.5-flash (Sprint 4)
+================================================================================
+
+After Sprint 4 optimizations, parse_answer remained ~80% of trace time.
+To push latency further, we tested gemini-2.5-flash as an alternative model.
+Runs were done on both STG and DEV for comparison.
+
+STG (Render) — same infrastructure, different model:
+┌──────────────────────┬──────────────────┬──────────────────┬────────┐
+│        Metric        │ gpt-4.1-nano     │ gemini-2.5-flash │  Diff  │
+│                      │ (avg of 4)       │ (eda77400)       │        │
+├──────────────────────┼──────────────────┼──────────────────┼────────┤
+│ Avg Duration / Trace │ 15.40s           │ 13.29s           │ -13.7% │
+├──────────────────────┼──────────────────┼──────────────────┼────────┤
+│ Cost / Trace         │ $0.000771        │ $0.004174        │ +441%  │
+├──────────────────────┼──────────────────┼──────────────────┼────────┤
+│ Tokens / Trace       │ 4,904            │ 5,489            │ +11.9% │
+├──────────────────────┼──────────────────┼──────────────────┼────────┤
+│ LLM Calls / Trace    │ 3.60             │ 3.77             │ +4.7%  │
+└──────────────────────┴──────────────────┴──────────────────┴────────┘
+
+DEV (local) — same machine, different model:
+┌──────────────────────┬──────────────────┬──────────────────┬────────┐
+│        Metric        │ gpt-4.1-nano     │ gemini-2.5-flash │  Diff  │
+│                      │ (b3a7b853)       │ (bdc79907)       │        │
+├──────────────────────┼──────────────────┼──────────────────┼────────┤
+│ Avg Duration / Trace │ 10.78s           │ 13.24s           │ +22.8% │
+├──────────────────────┼──────────────────┼──────────────────┼────────┤
+│ Cost / Trace         │ $0.000703        │       n/a*       │   n/a  │
+├──────────────────────┼──────────────────┼──────────────────┼────────┤
+│ Tokens / Trace       │ 4,714            │       n/a*       │   n/a  │
+├──────────────────────┼──────────────────┼──────────────────┼────────┤
+│ LLM Calls / Trace    │ 3.75             │ 4.00             │ +6.7%  │
+└──────────────────────┴──────────────────┴──────────────────┴────────┘
+* Langfuse not reporting tokens for most Gemini calls — cost/tokens unreliable
+
+Node-Level Comparison (STG, where both have full token tracking):
+┌─────────────────────────┬───────────────┬──────────────────┬────────┐
+│          Node           │ gpt-4.1-nano  │ gemini-2.5-flash │  Diff  │
+├─────────────────────────┼───────────────┼──────────────────┼────────┤
+│ parse_answer (avg/call) │ 11.97s        │ 8.53s            │ -28.7% │
+├─────────────────────────┼───────────────┼──────────────────┼────────┤
+│ update_state (avg/call) │ 1.47s         │ 1.88s            │ +27.9% │
+├─────────────────────────┼───────────────┼──────────────────┼────────┤
+│ generate_question       │ 955ms         │ 1.65s*           │ +72.8% │
+├─────────────────────────┼───────────────┼──────────────────┼────────┤
+│ analyze_resume_coverage │ 9.42s         │ 6.24s            │ -33.7% │
+└─────────────────────────┴───────────────┴──────────────────┴────────┘
+* eda77400 generate_question avg skewed by one 11.21s outlier (likely timeout/retry)
+  Excluding outlier: generate_question avg ~940ms (comparable to nano)
+
+gemini-2.5-flash Results:
+  - parse_answer significantly faster (-28.7%), especially the 3rd LLM call
+    (evaluation/scoring): ~3.3s vs ~6.0s with nano (-45%)
+  - On STG (Render): 13.7% faster overall despite Render overhead
+  - On DEV (local): 22.8% SLOWER — because bdc79907 (streaming mode) had extra
+    LLM calls in update_state (3-4s) that b3a7b853 (non-streaming) didn't,
+    masking Gemini's parse_answer advantage
+  - Generates more output tokens per call (+11.9% per trace)
+  - Cost per trace is ~5.4x higher ($0.00417 vs $0.00077)
+  - bdc79907 Langfuse token tracking broken (only 4K of expected ~55K+ reported)
+
+================================================================================
+  4. WHAT CHANGED (Sprint 3 → Sprint 4)
+================================================================================
+
+Code Optimizations:
+  - analyze_resume_coverage: Replaced heavy LLM call (~25s, ~6,685 tokens) with
+    cache system. On STG still 5.8–15.1s (cache + Render overhead). On DEV: 8ms
+    (cache fully effective, no Render penalty).
+  - update_state: Streamlined logic, removed unnecessary processing.
+    STG: 4.19s → 1.47s. DEV: 70ms → 26ms.
+  - parse_answer: Prompt trimming reduced input tokens on 1st LLM call from
+    ~2,600 to ~1,600. Saved tokens/cost but wall-clock time unchanged (~12s).
+
+Graph Structure Changes:
+  - is_first_run node → replaced by introduce + route_entry_point + route_after_greet
+  - generate_follow_up node (Sprint 3 DEV) → removed in Sprint 4
+  - finalize: Sprint 4 b3a7b853 added LLM call (847ms) for warning/validation check
+
+================================================================================
+  5. WHERE TIME IS SPENT NOW (Sprint 4)
+================================================================================
+
+parse_answer is ~75-80% of per-trace time across all Sprint 4 runs.
+This is the bottleneck that motivated the gemini-2.5-flash experiment.
+
+parse_answer LLM call breakdown (Sprint 4 STG gpt-4.1-nano avg):
+┌────────────────┬──────────────────────────┬──────────────┬────────────┐
+│      Call      │    Purpose (likely)      │ Avg Duration │ Avg Tokens │
+├────────────────┼──────────────────────────┼──────────────┼────────────┤
+│ 1st ChatOpenAI │ Classification/routing   │ ~600ms       │ ~1,600     │
+├────────────────┼──────────────────────────┼──────────────┼────────────┤
+│ 2nd ChatOpenAI │ Extraction               │ ~2.4s        │ ~1,250     │
+├────────────────┼──────────────────────────┼──────────────┼────────────┤
+│ 3rd ChatOpenAI │ Evaluation/scoring       │ ~6.0s        │ ~2,100     │
+└────────────────┴──────────────────────────┴──────────────┴────────────┘
+
+The 3rd LLM call (~6.0s avg, ~700 output tokens) is the single biggest bottleneck,
+accounting for ~40% of total trace time.
+
+With gemini-2.5-flash (eda77400 STG), parse_answer drops to 8.53s avg:
+┌────────────────┬──────────────────────────┬──────────────┬────────────┐
+│      Call      │    Purpose (likely)      │ Avg Duration │ Avg Tokens │
+├────────────────┼──────────────────────────┼──────────────┼────────────┤
+│ 1st ChatOpenAI │ Classification/routing   │ ~480ms       │ ~1,560     │
+├────────────────┼──────────────────────────┼──────────────┼────────────┤
+│ 2nd ChatOpenAI │ Extraction               │ ~2.3s        │ ~1,400     │
+├────────────────┼──────────────────────────┼──────────────┼────────────┤
+│ 3rd ChatOpenAI │ Evaluation/scoring       │ ~3.3s        │ ~2,200     │
+└────────────────┴──────────────────────────┴──────────────┴────────────┘
+
+Gemini's 3rd call is ~45% faster (3.3s vs 6.0s), cutting parse_answer by ~3.4s.
+
+================================================================================
+  6. DEV (local) vs STG (Render) ENVIRONMENT GAP
+================================================================================
+
+Sprint 3: DEV 34.6% faster than STG (12.73s vs 19.47s per trace)
+Sprint 4: DEV 30.0% faster than STG (10.78s vs 15.40s per trace)  (nano only)
+
+The persistent ~30-35% gap is caused by Render free tier limitations:
+  - Shared CPU/memory — compute-bound operations run slower
+  - Higher network latency to LLM API endpoints
+  - Cold-start penalties on Render free tier
+  - Cache system less effective on Render (analyze_resume_coverage: 9.42s vs 8ms)
+  - All nodes are slower on STG, not just specific ones:
+      parse_answer:  DEV 10.39s vs STG 11.97s  (+15%)
+      update_state:  DEV 26ms   vs STG 1.47s   (Render overhead amplified)
+
+================================================================================
+  7. KEY FINDINGS & CONCLUSIONS
+================================================================================
+
+Sprint 4 Optimization Results (gpt-4.1-nano, per-trace normalized):
+  ┌──────────────────────────┬─────────────────────┬──────────────────────┐
+  │         Metric           │   STG (Render)      │    DEV (local)       │
+  ├──────────────────────────┼─────────────────────┼──────────────────────┤
+  │ Avg Duration / Trace     │ 19.47s → 15.40s     │ 12.73s → 10.78s     │
+  │                          │ (-20.9%)            │ (-15.3%)             │
+  │ Cost / Trace             │ $0.00105 → $0.00077 │ $0.00087 → $0.00070 │
+  │                          │ (-26.6%)            │ (-18.8%)             │
+  │ Tokens / Trace           │ 6,773 → 4,904       │ 5,570 → 4,714       │
+  │                          │ (-27.6%)            │ (-15.4%)             │
+  │ analyze_resume_coverage  │ 29.22s → 9.42s      │ 26.16s → 8ms        │
+  │                          │ (-67.8%)            │ (-99.97%)            │
+  │ update_state             │ 4.19s → 1.47s       │ 70ms → 26ms         │
+  │                          │ (-64.9%)            │ (-62.9%)             │
+  └──────────────────────────┴─────────────────────┴──────────────────────┘
+
+  Logic + cache optimizations delivered significant wins on analyze_resume_coverage
+  and update_state. Per-trace cost and token usage dropped ~19-28%.
+
+Remaining Bottleneck:
+  - parse_answer 3rd LLM call: ~6.0s avg, ~700 output tokens
+  - Accounts for ~40% of total trace time
+  - Unchanged between Sprint 3 and Sprint 4
+
+gemini-2.5-flash Experiment Results:
+  - Directly addresses the parse_answer bottleneck: -28.7% faster, 3rd call -45%
+  - On STG: 13.29s avg/trace vs 15.40s nano (-13.7%)
+  - End-to-end improvement from Sprint 3 STG: 19.47s → 13.29s (-31.7%)
+  - Trade-off: cost per trace ~5.4x higher ($0.00417 vs $0.00077)
+  - Generates ~12% more tokens per trace (higher verbosity)
+  - Langfuse integration needs work (broken token tracking on DEV Gemini run)

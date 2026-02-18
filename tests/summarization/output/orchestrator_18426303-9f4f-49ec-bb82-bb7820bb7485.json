@@ -1,0 +1,581 @@
+{
+  "session_id": "18426303-9f4f-49ec-bb82-bb7820bb7485",
+  "mode": "SELF_REPORT",
+  "skills": [
+    {
+      "name": "python",
+      "evidence": [
+        {
+          "quote": "Languages: Python",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "basic scripting",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (direct mention of Python as a language skill indicates strong proficiency)"
+    },
+    {
+      "name": "SQL",
+      "evidence": [
+        {
+          "quote": "Languages: SQL",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "basic knowledge",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (direct mention of SQL language indicates solid familiarity)"
+    },
+    {
+      "name": "Apache Airflow",
+      "evidence": [
+        {
+          "quote": "Frameworks & Tools: Apache Airflow",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "basic familiarity",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (candidate explicitly lists Apache Airflow as a framework/tool they are familiar with)"
+    },
+    {
+      "name": "spark",
+      "evidence": [
+        {
+          "quote": "Frameworks & Tools: Spark",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "We designed batch and streaming pipelines using Spark and Airflow.",
+          "timestamp": "2026-01-12T01:19:40.564871",
+          "source": "conversation"
+        }
+      ],
+      "dimensions": {
+        "duration": "used in recent projects",
+        "depth": "intermediate knowledge",
+        "autonomy": "collaborative work",
+        "scale": "pipeline development",
+        "constraint": "performance optimization",
+        "production": "deployed pipelines"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (specific example demonstrates understanding beyond surface level)"
+    },
+    {
+      "name": "dbt",
+      "evidence": [
+        {
+          "quote": "Frameworks & Tools: dbt",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "built data models with dbt so analysts could trust the data.",
+          "timestamp": "2026-01-12T01:19:40.564871",
+          "source": "conversation"
+        }
+      ],
+      "dimensions": {
+        "duration": "built data models recently",
+        "depth": "data modeling expertise",
+        "autonomy": "independent model building",
+        "scale": "not specified",
+        "constraint": "not specified",
+        "production": "trusted data models"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (specific example demonstrates practical experience in building data models with dbt)"
+    },
+    {
+      "name": "postgresql",
+      "evidence": [
+        {
+          "quote": "Datastores: PostgreSQL",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "N/A",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (clear evidence of PostgreSQL experience in datastore management)"
+    },
+    {
+      "name": "Snowflake",
+      "evidence": [
+        {
+          "quote": "Datastores: Snowflake",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "Data was stored in Snowflake and S3.",
+          "timestamp": "2026-01-12T01:17:40.564871",
+          "source": "conversation"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "N/A",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "Medium-High (evidence indicates hands-on experience with Snowflake as a data store, but lacks detail on depth of expertise)"
+    },
+    {
+      "name": "aws",
+      "evidence": [
+        {
+          "quote": "Datastores: S3",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "Data was stored in Snowflake and S3.",
+          "timestamp": "2026-01-12T01:17:40.564871",
+          "source": "conversation"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "basic knowledge",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "Medium-High (evidence shows familiarity with AWS storage services, but lacks detail on broader AWS skills)"
+    },
+    {
+      "name": "docker",
+      "evidence": [
+        {
+          "quote": "Infrastructure: Docker",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "basic knowledge",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (explicit mention of Docker infrastructure indicates strong familiarity)"
+    },
+    {
+      "name": "kubernetes",
+      "evidence": [
+        {
+          "quote": "Infrastructure: Kubernetes",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "We ran Airflow and Spark jobs in Kubernetes.",
+          "timestamp": "2026-01-12T01:17:40.564871",
+          "source": "conversation"
+        }
+      ],
+      "dimensions": {
+        "duration": "ongoing since 2026",
+        "depth": "practical application",
+        "autonomy": "N/A",
+        "scale": "run Airflow and Spark jobs",
+        "constraint": "N/A",
+        "production": "used in production"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (evidence demonstrates practical experience managing Kubernetes infrastructure and running complex workloads)"
+    },
+    {
+      "name": "ci/cd",
+      "evidence": [
+        {
+          "quote": "Infrastructure: GitHub Actions",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "we used GitHub Actions for deploying pipeline changes.",
+          "timestamp": "2026-01-12T01:17:40.564871",
+          "source": "conversation"
+        }
+      ],
+      "dimensions": {
+        "duration": "ongoing use since 2026",
+        "depth": "basic familiarity",
+        "autonomy": "N/A",
+        "scale": "single project scope",
+        "constraint": "N/A",
+        "production": "deployed pipeline changes"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (specific example demonstrates practical implementation of CI/CD pipelines using GitHub Actions)"
+    },
+    {
+      "name": "Airflow",
+      "evidence": [
+        {
+          "quote": "We ran Airflow and Spark jobs in Kubernetes.",
+          "timestamp": "2026-01-12T01:17:40.564871",
+          "source": "conversation"
+        },
+        {
+          "quote": "I designed batch and streaming pipelines using Spark and Airflow.",
+          "timestamp": "2026-01-12T01:19:40.564871",
+          "source": "conversation"
+        },
+        {
+          "quote": "We designed batch and streaming pipelines using Spark and Airflow.",
+          "timestamp": "2026-01-13T08:11:09.18286",
+          "source": "conversation"
+        }
+      ],
+      "dimensions": {
+        "duration": "multiple years",
+        "depth": "designed pipelines",
+        "autonomy": "designed and ran jobs",
+        "scale": "batch and streaming pipelines",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (multiple instances of pipeline design and execution demonstrate strong practical experience)"
+    }
+  ],
+  "behavior_observations": [
+    {
+      "name": "Technical Leadership",
+      "evidence": [
+        {
+          "quote": "Led a migration from on-premise data warehouse to Snowflake, improving query performance and reducing infrastructure costs.",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "My team built and ran the data platform that hospitals used to analyze patient, billing, and operational data.",
+          "timestamp": "2026-01-12 01:15:40",
+          "source": "conversation"
+        }
+      ],
+      "meaningfulness": "High",
+      "confidence": "High (specific examples demonstrate leadership in technical projects and team management)"
+    },
+    {
+      "name": "Autonomy",
+      "evidence": [
+        {
+          "quote": "Built and maintained data pipelines ingesting millions of patient and billing records per day.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "meaningfulness": "Medium",
+      "confidence": "Medium-High (the evidence suggests independent work, but the skill's relevance depends on context)"
+    },
+    {
+      "name": "Attention to Detail",
+      "evidence": [
+        {
+          "quote": "Implemented data quality checks and alerting to catch missing or corrupted healthcare records.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "meaningfulness": "High",
+      "confidence": "High (specific example demonstrates practical application in a critical domain)"
+    },
+    {
+      "name": "Problem-solving",
+      "evidence": [
+        {
+          "quote": "Built and maintained data pipelines ingesting millions of patient and billing records per day.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "meaningfulness": "High",
+      "confidence": "Medium-High (demonstrates practical application in a complex data environment)"
+    },
+    {
+      "name": "Communication",
+      "evidence": [
+        {
+          "quote": "Analytics dashboards used by executives to track operational efficiency and reimbursement rates.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "meaningfulness": "Medium",
+      "confidence": "Medium-High (indirect evidence suggests understanding of communication, but no direct evidence of skill)"
+    },
+    {
+      "name": "Operational Responsibility",
+      "evidence": [
+        {
+          "quote": "I was responsible for keeping data pipelines within SLA. I investigated failures, fixed broken jobs, and added alerts when data freshness dropped.",
+          "timestamp": "2026-01-12 01:18:40",
+          "source": "conversation"
+        }
+      ],
+      "meaningfulness": "High",
+      "confidence": "Medium-High (clear example of operational responsibility in maintaining data pipelines demonstrates relevant experience)"
+    },
+    {
+      "name": "Impact Orientation",
+      "evidence": [
+        {
+          "quote": "We cut reporting delays from days to hours and reduced data errors by over 50%, which improved hospital billing accuracy.",
+          "timestamp": "2026-01-12 01:20:40",
+          "source": "conversation"
+        }
+      ],
+      "meaningfulness": "High",
+      "confidence": "High (specific example demonstrates measurable impact on processes and accuracy)"
+    },
+    {
+      "name": "Decision-Making",
+      "evidence": [
+        {
+          "quote": "We chose slower but more reliable batch processing for critical compliance reports instead of real-time pipelines, because accuracy mattered more than speed.",
+          "timestamp": "2026-01-12 01:21:40",
+          "source": "conversation"
+        }
+      ],
+      "meaningfulness": "High",
+      "confidence": "High (specific example demonstrates understanding beyond surface level)"
+    }
+  ],
+  "infra_contexts": [
+    {
+      "environment_type": "Production",
+      "scale": "Company-wide",
+      "reliability_expectation": "High",
+      "operational_constraints": "Nightly reporting deadlines",
+      "evidence": [
+        {
+          "quote": "The platform supported nightly reporting deadlines for hospitals",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "confidence": "High"
+    },
+    {
+      "environment_type": "Production",
+      "scale": "Team",
+      "reliability_expectation": "High",
+      "operational_constraints": "Healthcare compliance",
+      "evidence": [
+        {
+          "quote": "Worked on healthcare analytics platforms used by hospitals and insurance providers",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "confidence": "High"
+    },
+    {
+      "environment_type": "Production",
+      "scale": "Company-wide",
+      "reliability_expectation": "High",
+      "operational_constraints": "Processing millions of records daily",
+      "evidence": [
+        {
+          "quote": "Built and maintained data pipelines ingesting millions of patient and billing records per day",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "confidence": "High"
+    },
+    {
+      "environment_type": "Production",
+      "scale": "Company-wide",
+      "reliability_expectation": "High",
+      "operational_constraints": "Compliance reporting",
+      "evidence": [
+        {
+          "quote": "Implemented data quality checks and alerting to catch missing or corrupted healthcare records",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "confidence": "High"
+    },
+    {
+      "environment_type": "Staging",
+      "scale": "Team",
+      "reliability_expectation": "Medium",
+      "operational_constraints": null,
+      "evidence": [
+        {
+          "quote": "Migrated from on-premise data warehouse to Snowflake",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "confidence": "Medium-High"
+    },
+    {
+      "environment_type": "Production",
+      "scale": "Team",
+      "reliability_expectation": "Mission-critical",
+      "operational_constraints": "Healthcare compliance, Financial reporting",
+      "evidence": [
+        {
+          "quote": "My team built and ran the data platform that hospitals used to analyze patient, billing, and operational data. These systems supported compliance and financial reporting.",
+          "timestamp": "",
+          "source": "conversation"
+        }
+      ],
+      "confidence": "High"
+    },
+    {
+      "environment_type": "Production",
+      "scale": "Team",
+      "reliability_expectation": "High",
+      "operational_constraints": "Hospital report submission, Revenue impact",
+      "evidence": [
+        {
+          "quote": "They were mission critical. If our pipelines failed, hospitals couldn’t submit reports or get reimbursed properly, which directly impacted revenue.",
+          "timestamp": "",
+          "source": "conversation"
+        }
+      ],
+      "confidence": "High"
+    },
+    {
+      "environment_type": "Production",
+      "scale": "Team",
+      "reliability_expectation": "High",
+      "operational_constraints": "Nightly reporting deadlines, Data accuracy",
+      "evidence": [
+        {
+          "quote": "We ran Airflow and Spark jobs in Kubernetes. Data was stored in Snowflake and S3, and we used GitHub Actions for deploying pipeline changes.",
+          "timestamp": "",
+          "source": "conversation"
+        }
+      ],
+      "confidence": "High"
+    },
+    {
+      "environment_type": "Production",
+      "scale": "Team",
+      "reliability_expectation": "High",
+      "operational_constraints": "SLA adherence, Data freshness monitoring",
+      "evidence": [
+        {
+          "quote": "Yes — I was responsible for keeping data pipelines within SLA. I investigated failures, fixed broken jobs, and added alerts when data freshness dropped.",
+          "timestamp": "",
+          "source": "conversation"
+        }
+      ],
+      "confidence": "High"
+    },
+    {
+      "environment_type": "Prototype",
+      "scale": "Team",
+      "reliability_expectation": "Medium",
+      "operational_constraints": null,
+      "evidence": [
+        {
+          "quote": "I designed batch and streaming pipelines using Spark and Airflow, and built data models with dbt so analysts could trust the data.",
+          "timestamp": "",
+          "source": "conversation"
+        }
+      ],
+      "confidence": "Medium-High"
+    }
+  ],
+  "domain_contexts": [
+    {
+      "industry": "Healthcare",
+      "product_type": "Data platform",
+      "business_model": "Internal",
+      "customer_type": "Hospitals and insurance providers",
+      "regulatory_or_compliance_context": "Healthcare",
+      "business_criticality": "High",
+      "evidence": [
+        {
+          "quote": "Worked on healthcare analytics platforms used by hospitals and insurance providers. Systems processed patient records, billing data, and operational metrics used for compliance reporting and financial forecasting.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "confidence": "High"
+    },
+    {
+      "industry": "Healthcare",
+      "product_type": "Reporting and analytics pipelines",
+      "business_model": "Internal",
+      "customer_type": "Hospital finance teams and executives",
+      "regulatory_or_compliance_context": "Healthcare",
+      "business_criticality": "High",
+      "evidence": [
+        {
+          "quote": "Implemented data quality checks and alerting to catch missing or corrupted healthcare records. Projects included compliance reporting pipelines and operational dashboards used by executives.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "confidence": "High"
+    },
+    {
+      "industry": "Healthcare",
+      "product_type": "Reporting and analytics platform",
+      "business_model": "Internal",
+      "customer_type": "Hospitals",
+      "regulatory_or_compliance_context": "Healthcare",
+      "business_criticality": "Revenue-impacting",
+      "evidence": [
+        {
+          "quote": "My team built and ran the data platform that hospitals used to analyze patient, billing, and operational data. These systems supported compliance and financial reporting.",
+          "timestamp": "",
+          "source": "conversation"
+        }
+      ],
+      "confidence": "High"
+    }
+  ]
+}

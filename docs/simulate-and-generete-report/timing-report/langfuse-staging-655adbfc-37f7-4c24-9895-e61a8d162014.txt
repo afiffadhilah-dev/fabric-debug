@@ -1,0 +1,457 @@
+================================================================================
+  LANGFUSE TIMING REPORT
+================================================================================
+  Session ID:     655adbfc-37f7-4c24-9895-e61a8d162014
+  Environment:    staging
+  Candidate ID:   sim-20260205-084438
+  Generated:      2026-02-05T02:38:53.255796Z
+  Traces Count:   14
+================================================================================
+
+================================================================================
+  SUMMARY
+================================================================================
+
+  Total Duration:   265.16s
+  Total Cost:       $0.014422
+  Total Tokens:     93,562
+    - Input:        76,677
+    - Output:       16,885
+
+  NODES TIMING SUMMARY:
+  Node                            Count      Total        Avg        Min        Max
+  ------------------------------------------------------------------------------
+  LangGraph                          14    265.16s     18.94s     15.31s     35.97s
+  parse_answer                       13    143.74s     11.06s      9.00s     13.42s
+  update_state                       13     54.52s      4.19s      3.93s      7.11s
+  analyze_resume_coverage             1     34.13s     34.13s     34.13s     34.13s
+  generate_question                  13     13.36s      1.03s        4ms      1.96s
+  select_gap                         13      196ms       15ms        4ms       70ms
+  should_follow_up                   13      158ms       12ms        4ms       88ms
+  __start__                          14      156ms       11ms        2ms       53ms
+  is_first_run                       14       94ms        7ms        1ms       14ms
+  finalize                            1       94ms       94ms       94ms       94ms
+  should_continue_interview           1       12ms       12ms       12ms       12ms
+
+  LLM CALLS SUMMARY:
+  Model                                     Count   Duration         Cost     Tokens
+  --------------------------------------------------------------------------------
+  openai/gpt-4.1-nano                          53    189.33s $   0.014422     93,562
+
+================================================================================
+  DETAILED BREAKDOWN (Time Focus)
+================================================================================
+
+  TRACE 1: LangGraph
+  ID: 293f3e7ac17053c8d3d1618c34404d8e
+  Timestamp: 2026-02-05T01:51:15.981000+00:00
+  Total Duration: 17.88s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 17.88s
+      ├─ __start__ [CHAIN]
+      │    Duration: 53ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 12ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 9.00s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.15s  [2,614 → 81 = 2,695 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.83s  [1,010 → 173 = 1,183 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 5.97s  [1,559 → 746 = 2,305 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 7.11s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 3.08s  [1,101 → 308 = 1,409 tokens]
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 88ms
+      ├─ finalize [CHAIN]
+      │    Duration: 94ms
+
+  TRACE 2: LangGraph
+  ID: 401768c9a1bd7d75bae6f08863877c24
+  Timestamp: 2026-02-05T01:50:48.284000+00:00
+  Total Duration: 17.10s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 17.10s
+      ├─ __start__ [CHAIN]
+      │    Duration: 11ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 9ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 10.50s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.18s  [2,677 → 80 = 2,757 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 3.34s  [1,073 → 266 = 1,339 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 5.92s  [1,537 → 546 = 2,083 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 4.00s
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 5ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 61ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 820ms
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 813ms  [275 → 26 = 301 tokens]
+
+  TRACE 3: LangGraph
+  ID: 0baa7dcf41031fa6f6d69a0ec1a5c4b6
+  Timestamp: 2026-02-05T01:50:20.674000+00:00
+  Total Duration: 16.32s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 16.32s
+      ├─ __start__ [CHAIN]
+      │    Duration: 19ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 14ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 9.88s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.02s  [2,646 → 73 = 2,719 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 2.57s  [1,048 → 222 = 1,270 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 6.22s  [1,497 → 695 = 2,192 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 3.95s
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 8ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 8ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 903ms
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 808ms  [436 → 44 = 480 tokens]
+
+  TRACE 4: LangGraph
+  ID: 38e94ff18c7170df29bf8be40ac8a26b
+  Timestamp: 2026-02-05T01:49:52.781000+00:00
+  Total Duration: 16.79s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 16.79s
+      ├─ __start__ [CHAIN]
+      │    Duration: 12ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 11ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 9.89s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.57s  [2,558 → 79 = 2,637 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 2.88s  [957 → 260 = 1,217 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 5.37s  [1,438 → 715 = 2,153 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 3.97s
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 8ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 9ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 1.58s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.48s  [421 → 55 = 476 tokens]
+
+  TRACE 5: LangGraph
+  ID: ff252b5d5614f803f166391037cb2fc0
+  Timestamp: 2026-02-05T01:49:21.985000+00:00
+  Total Duration: 20.99s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 20.99s
+      ├─ __start__ [CHAIN]
+      │    Duration: 7ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 5ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 13.42s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 3.60s  [2,614 → 75 = 2,689 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 2.44s  [1,014 → 229 = 1,243 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 7.31s  [1,489 → 711 = 2,200 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 3.94s
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 5ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 6ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 805ms
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 712ms  [430 → 33 = 463 tokens]
+
+  TRACE 6: LangGraph
+  ID: 4ce910e49b1c192649c8ec690c7c6d8c
+  Timestamp: 2026-02-05T01:48:55.081000+00:00
+  Total Duration: 16.94s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 16.94s
+      ├─ __start__ [CHAIN]
+      │    Duration: 8ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 6ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 10.91s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.53s  [2,697 → 82 = 2,779 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 2.51s  [1,092 → 211 = 1,303 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 6.79s  [1,568 → 700 = 2,268 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 3.94s
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 8ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 6ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 958ms
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 861ms  [422 → 41 = 463 tokens]
+
+  TRACE 7: LangGraph
+  ID: cd9bf84a6875189d4750c875c5c4c343
+  Timestamp: 2026-02-05T01:48:24.276000+00:00
+  Total Duration: 18.85s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 18.85s
+      ├─ __start__ [CHAIN]
+      │    Duration: 6ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 5ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 12.36s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.28s  [2,594 → 76 = 2,670 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 3.43s  [996 → 217 = 1,213 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 7.64s  [1,478 → 695 = 2,173 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 3.95s
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 7ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 9ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 1.51s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.41s  [417 → 40 = 457 tokens]
+
+  TRACE 8: LangGraph
+  ID: f6db806a364ece6d92da85b1e8ace874
+  Timestamp: 2026-02-05T01:47:55.482000+00:00
+  Total Duration: 17.45s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 17.45s
+      ├─ __start__ [CHAIN]
+      │    Duration: 5ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 4ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 11.62s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.46s  [2,613 → 79 = 2,692 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 2.61s  [1,012 → 267 = 1,279 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 7.47s  [1,475 → 676 = 2,151 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 3.93s
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 5ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 5ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 865ms
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 858ms  [442 → 38 = 480 tokens]
+
+  TRACE 9: LangGraph
+  ID: 19d8a09b1297c22690b4e3ad1d2e97ba
+  Timestamp: 2026-02-05T01:47:28.716000+00:00
+  Total Duration: 16.47s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 16.47s
+      ├─ __start__ [CHAIN]
+      │    Duration: 5ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 4ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 10.41s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.30s  [2,643 → 77 = 2,720 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 2.50s  [1,043 → 227 = 1,270 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 6.58s  [1,512 → 703 = 2,215 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 3.93s
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 5ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 5ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 1.09s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.08s  [417 → 50 = 467 tokens]
+
+  TRACE 10: LangGraph
+  ID: 9c89a637e2485e489f277723b5db09ae
+  Timestamp: 2026-02-05T01:46:59.683000+00:00
+  Total Duration: 15.31s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 15.31s
+      ├─ __start__ [CHAIN]
+      │    Duration: 8ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 7ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 9.26s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.55s  [2,648 → 78 = 2,726 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 2.19s  [1,043 → 204 = 1,247 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 5.45s  [1,525 → 551 = 2,076 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 3.94s
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 6ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 70ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 1.09s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.08s  [400 → 54 = 454 tokens]
+
+  TRACE 11: LangGraph
+  ID: adf8895b1ec7951002d42af581c42edf
+  Timestamp: 2026-02-05T01:46:30.785000+00:00
+  Total Duration: 17.04s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 17.04s
+      ├─ __start__ [CHAIN]
+      │    Duration: 8ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 6ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 11.01s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.23s  [2,566 → 84 = 2,650 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 2.87s  [961 → 239 = 1,200 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 6.84s  [1,495 → 706 = 2,201 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 3.94s
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 5ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 4ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 856ms
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 849ms  [434 → 46 = 480 tokens]
+
+  TRACE 12: LangGraph
+  ID: 61dabcfbb02d8823cde2f5d2c45f427c
+  Timestamp: 2026-02-05T01:46:00.777000+00:00
+  Total Duration: 19.39s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 19.39s
+      ├─ __start__ [CHAIN]
+      │    Duration: 8ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 7ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 12.51s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.31s  [2,594 → 84 = 2,678 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 2.29s  [986 → 225 = 1,211 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 8.82s  [1,649 → 875 = 2,524 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 3.94s
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 4ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 5ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 1.96s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.96s  [408 → 45 = 453 tokens]
+
+  TRACE 13: LangGraph
+  ID: a796f96d4c715d90fd41328d30ba65fb
+  Timestamp: 2026-02-05T01:45:30.281000+00:00
+  Total Duration: 18.68s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 18.68s
+      ├─ __start__ [CHAIN]
+      │    Duration: 4ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 3ms
+      ├─ parse_answer [CHAIN]
+      │    Duration: 12.98s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 1.30s  [2,510 → 84 = 2,594 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 3.92s  [902 → 246 = 1,148 tokens]
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 7.74s  [1,586 → 892 = 2,478 tokens]
+      ├─ update_state [CHAIN]
+      │    Duration: 3.98s
+        ├─ should_follow_up [CHAIN]
+        │    Duration: 4ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 4ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 921ms
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 831ms  [307 → 39 = 346 tokens]
+
+  TRACE 14: LangGraph
+  ID: ae4ba8ab9f6ce0582b6abfa57d5763ae
+  Timestamp: 2026-02-05T01:44:44.285000+00:00
+  Total Duration: 35.97s
+  ----------------------------------------------------------------------------
+    ├─ LangGraph [CHAIN]
+    │    Duration: 35.97s
+      ├─ __start__ [CHAIN]
+      │    Duration: 2ms
+        ├─ is_first_run [CHAIN]
+        │    Duration: 1ms
+      ├─ analyze_resume_coverage [CHAIN]
+      │    Duration: 34.13s
+        ├─ ChatOpenAI (openai/gpt-4.1-nano)
+        │    Duration: 30.52s  [3,848 → 2,837 = 6,685 tokens]
+        ├─ should_continue_interview [CHAIN]
+        │    Duration: 12ms
+      ├─ select_gap [CHAIN]
+      │    Duration: 4ms
+      ├─ generate_question [CHAIN]
+      │    Duration: 4ms
+
+================================================================================
+  END OF REPORT
+================================================================================

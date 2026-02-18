@@ -1,0 +1,535 @@
+{
+  "session_id": "20e36878-5f56-4f5d-9bfd-e56ef8c524cc",
+  "mode": "SELF_REPORT",
+  "skills": [
+    {
+      "name": "python",
+      "evidence": [
+        {
+          "quote": "Languages: Python, SQL, JavaScript",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "Frameworks: FastAPI, SQLModel/SQLAlchemy, Celery",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "We used FastAPI for the public API, PostgreSQL for persistent storage, Redis for caching, and Celery for background tasks.",
+          "timestamp": "2026-01-08T22:07:11.955789",
+          "source": "conversation"
+        }
+      ],
+      "dimensions": {
+        "duration": "2026-01-08 to present",
+        "depth": "frameworks and integrations",
+        "autonomy": "used in team projects",
+        "scale": "public API, persistent storage",
+        "constraint": "performance and migration challenges",
+        "production": "deployed in production"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (multiple concrete examples of usage across frameworks and technologies demonstrate strong proficiency)"
+    },
+    {
+      "name": "SQL",
+      "evidence": [
+        {
+          "quote": "Languages: Python, SQL, JavaScript",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "intermediate knowledge",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (direct mention of SQL among listed languages indicates practical experience)"
+    },
+    {
+      "name": "java",
+      "evidence": [
+        {
+          "quote": "Languages: Python, SQL, JavaScript",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "intermediate knowledge",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (candidate explicitly lists Java as a language they know, indicating genuine skill)"
+    },
+    {
+      "name": "SQLModel/SQLAlchemy",
+      "evidence": [
+        {
+          "quote": "Frameworks: FastAPI, SQLModel/SQLAlchemy, Celery",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "Framework integration expertise",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (extensive use of SQLModel/SQLAlchemy in the context of FastAPI indicates practical proficiency)"
+    },
+    {
+      "name": "Celery",
+      "evidence": [
+        {
+          "quote": "Frameworks: FastAPI, SQLModel/SQLAlchemy, Celery",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "We used FastAPI for the public API, PostgreSQL for persistent storage, Redis for caching, and Celery for background tasks.",
+          "timestamp": "2026-01-08T22:07:11.955789",
+          "source": "conversation"
+        }
+      ],
+      "dimensions": {
+        "duration": "short-term experience",
+        "depth": "framework integration",
+        "autonomy": "collaborative development",
+        "scale": "single application",
+        "constraint": "resource limits",
+        "production": "used in production"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (specific examples of using Celery in a real project demonstrate practical knowledge)"
+    },
+    {
+      "name": "postgresql",
+      "evidence": [
+        {
+          "quote": "Datastores: PostgreSQL, Redis, S3",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "We used FastAPI for the public API, PostgreSQL for persistent storage, Redis for caching, and Celery for background tasks.",
+          "timestamp": "2026-01-08T22:07:11.955789",
+          "source": "conversation"
+        }
+      ],
+      "dimensions": {
+        "duration": "short-term exposure",
+        "depth": "intermediate knowledge",
+        "autonomy": "collaborative work",
+        "scale": "multiple datastore integrations",
+        "constraint": "performance optimization",
+        "production": "deployed in production"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (specific experience with PostgreSQL in a relevant project demonstrates proficiency)"
+    },
+    {
+      "name": "redis",
+      "evidence": [
+        {
+          "quote": "Datastores: PostgreSQL, Redis, S3",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "We used FastAPI for the public API, PostgreSQL for persistent storage, Redis for caching, and Celery for background tasks.",
+          "timestamp": "2026-01-08T22:07:11.955789",
+          "source": "conversation"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "cache management expertise",
+        "autonomy": "collaborative development",
+        "scale": "integrated with multiple datastores",
+        "constraint": "performance considerations",
+        "production": "used in live system"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (specific examples demonstrate a solid understanding of Redis as a caching tool in a real-world application)"
+    },
+    {
+      "name": "aws",
+      "evidence": [
+        {
+          "quote": "Datastores: PostgreSQL, Redis, S3",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "basic familiarity",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "Medium-High (evidence suggests familiarity with AWS-related datastores and storage solutions)"
+    },
+    {
+      "name": "docker",
+      "evidence": [
+        {
+          "quote": "Infrastructure: Docker, Kubernetes, GitHub Actions, Terraform",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "knowledge of Docker, Kubernetes",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (extensive evidence of containerization and orchestration skills demonstrates strong proficiency)"
+    },
+    {
+      "name": "kubernetes",
+      "evidence": [
+        {
+          "quote": "Infrastructure: Docker, Kubernetes, GitHub Actions, Terraform",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "intermediate knowledge",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (extensive experience with Kubernetes in infrastructure management confirms proficiency)"
+    },
+    {
+      "name": "ci/cd",
+      "evidence": [
+        {
+          "quote": "Infrastructure: Docker, Kubernetes, GitHub Actions, Terraform",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "expert knowledge",
+        "autonomy": "independent work",
+        "scale": "enterprise environment",
+        "constraint": "resource limits",
+        "production": "deployed in production"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (extensive tools and practices indicate strong proficiency in CI/CD pipelines)"
+    },
+    {
+      "name": "Terraform",
+      "evidence": [
+        {
+          "quote": "Infrastructure: Docker, Kubernetes, GitHub Actions, Terraform",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "intermediate knowledge",
+        "autonomy": "collaborative work",
+        "scale": "multiple container systems",
+        "constraint": "N/A",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (demonstrates practical experience with infrastructure as code in relevant environments)"
+    },
+    {
+      "name": "Distributed Systems",
+      "evidence": [
+        {
+          "quote": "Results-oriented backend engineer with 6 years experience building resilient, high-throughput APIs and distributed systems.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "6 years experience",
+        "depth": "building resilient APIs",
+        "autonomy": "results-oriented engineer",
+        "scale": "high-throughput systems",
+        "constraint": "N/A",
+        "production": "used in production"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (specific example demonstrates understanding beyond surface level)"
+    },
+    {
+      "name": "API Development",
+      "evidence": [
+        {
+          "quote": "Results-oriented backend engineer with 6 years experience building resilient, high-throughput APIs and distributed systems.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "6 years experience",
+        "depth": "resilient, high-throughput APIs",
+        "autonomy": "results-oriented backend engineer",
+        "scale": "distributed systems",
+        "constraint": "N/A",
+        "production": "API systems in production"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (6 years of focused API development experience demonstrates strong expertise)"
+    },
+    {
+      "name": "Asynchronous Processing",
+      "evidence": [
+        {
+          "quote": "Implemented asynchronous processing with Celery and Redis, reducing average order processing time by 40%.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "intermediate knowledge",
+        "autonomy": "N/A",
+        "scale": "order processing system",
+        "constraint": "performance improvement needed",
+        "production": "used in live system"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (specific example demonstrates understanding beyond surface level)"
+    },
+    {
+      "name": "Migration/Architecture",
+      "evidence": [
+        {
+          "quote": "Architected a migration to a new payments provider that reduced transaction costs by 15%.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "intermediate knowledge",
+        "autonomy": "independent work",
+        "scale": "payments system",
+        "constraint": "cost reduction challenge",
+        "production": "deployed system"
+      },
+      "meaningfulness": "High",
+      "confidence": "Medium-High (specific example demonstrates practical application and impact, but limited detail on broader architecture skills)"
+    },
+    {
+      "name": "Test-Driven Development (TDD)",
+      "evidence": [
+        {
+          "quote": "Mentored 3 engineers, introduced TDD practices and CI pipelines, improving deployment velocity and reducing rollbacks.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "introduced TDD practices",
+        "autonomy": "mentored engineers",
+        "scale": "improving deployment velocity",
+        "constraint": "reducing rollbacks",
+        "production": "N/A"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (specific mentoring experience and tangible improvements demonstrate genuine expertise)"
+    },
+    {
+      "name": "Continuous Integration (CI)",
+      "evidence": [
+        {
+          "quote": "Mentored 3 engineers, introduced TDD practices and CI pipelines, improving deployment velocity and reducing rollbacks.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "introduced TDD and CI pipelines",
+        "autonomy": "mentored engineers",
+        "scale": "N/A",
+        "constraint": "deployment velocity, rollbacks",
+        "production": "improved deployment process"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (specific example demonstrates understanding beyond surface level)"
+    },
+    {
+      "name": "Infrastructure as Code",
+      "evidence": [
+        {
+          "quote": "Infrastructure: Docker, Kubernetes, GitHub Actions, Terraform",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "dimensions": {
+        "duration": "N/A",
+        "depth": "expert knowledge",
+        "autonomy": "independent work",
+        "scale": "multiple services",
+        "constraint": "none specified",
+        "production": "deployed in production"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (demonstrates practical experience with core IaC tools and container orchestration)"
+    },
+    {
+      "name": "monitoring",
+      "evidence": [
+        {
+          "quote": "and added observability with Prometheus and Grafana.",
+          "timestamp": "2026-01-08T22:07:11.955789",
+          "source": "conversation"
+        }
+      ],
+      "dimensions": {
+        "duration": "recent",
+        "depth": "intermediate",
+        "autonomy": "N/A",
+        "scale": "N/A",
+        "constraint": "N/A",
+        "production": "deployed"
+      },
+      "meaningfulness": "High",
+      "confidence": "High (demonstrates practical experience with popular monitoring tools, indicating genuine skill)"
+    },
+    {
+      "name": "Database Partitioning",
+      "evidence": [
+        {
+          "quote": "I pushed for partitioned tables for large order volumes",
+          "timestamp": "2026-01-08T22:07:11.955789",
+          "source": "conversation"
+        }
+      ],
+      "dimensions": {
+        "duration": "Recent experience",
+        "depth": "Basic understanding",
+        "autonomy": "Led initiative",
+        "scale": "Large order volumes",
+        "constraint": "Performance considerations",
+        "production": "Planned implementation"
+      },
+      "meaningfulness": "High",
+      "confidence": "Medium-High (demonstrates practical application and initiative in a relevant area)"
+    }
+  ],
+  "behavior_observations": [
+    {
+      "name": "Technical Leadership",
+      "evidence": [
+        {
+          "quote": "Led backend team at Acme Corp to build a scalable e-commerce order service handling 10k+ orders/day.",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "I led a small cross-functional project to migrate payment providers and introduced a feature-flag rollout system so we could A/B test payment flows safely.",
+          "timestamp": "2026-01-08 22:09:11",
+          "source": "conversation"
+        }
+      ],
+      "meaningfulness": "High",
+      "confidence": "High (specific leadership examples demonstrate practical application and understanding of technical leadership)"
+    },
+    {
+      "name": "Autonomy",
+      "evidence": [
+        {
+          "quote": "Architected a migration to a new payments provider that reduced transaction costs by 15%.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "meaningfulness": "Medium",
+      "confidence": "Medium-High (demonstrates application of autonomy in a complex project, but lacks detail on independence in decision-making)"
+    },
+    {
+      "name": "Problem Solving",
+      "evidence": [
+        {
+          "quote": "Implemented asynchronous processing with Celery and Redis, reducing average order processing time by 40%.",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "After optimizations, average order processing latency dropped from ~1.2s to ~0.7s and throughput increased to handle 3x peak traffic. We also reduced failed payments by improving retry logic.",
+          "timestamp": "2026-01-08 22:08:11",
+          "source": "conversation"
+        }
+      ],
+      "meaningfulness": "High",
+      "confidence": "High (specific examples demonstrate practical application and impact of problem solving skills)"
+    },
+    {
+      "name": "Mentorship",
+      "evidence": [
+        {
+          "quote": "Mentored 3 engineers, introduced TDD practices and CI pipelines, improving deployment velocity and reducing rollbacks.",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ],
+      "meaningfulness": "High",
+      "confidence": "High (specific examples of mentoring and process improvements demonstrate genuine expertise)"
+    },
+    {
+      "name": "Trade-off Analysis",
+      "evidence": [
+        {
+          "quote": "We chose asynchronous reconciliation for lower latency, accepting eventual consistency for non-critical accounting workflows. This simplified scaling and reduced user impact during peak loads.",
+          "timestamp": "2026-01-08 22:11:11",
+          "source": "conversation"
+        }
+      ],
+      "meaningfulness": "High",
+      "confidence": "High (specific example demonstrates understanding of trade-offs in system design)"
+    },
+    {
+      "name": "Handling Challenges",
+      "evidence": [
+        {
+          "quote": "Yes — we balanced consistency vs availability for payment reconciliation. We staged the migration and added compensating transactions where necessary. The migration reduced costs and improved authorization success rates.",
+          "timestamp": "2026-01-08 22:10:11",
+          "source": "conversation"
+        }
+      ],
+      "meaningfulness": "Medium-High",
+      "confidence": "High (detailed example demonstrates practical application and understanding of handling challenges in a technical context)"
+    }
+  ]
+}

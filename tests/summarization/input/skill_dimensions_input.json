@@ -1,0 +1,397 @@
+{
+  "candidate_id": "TARGET ROLE: Software Engineer",
+  "skills": [
+    {
+      "name": "java",
+      "evidence": [
+        {
+          "quote": "Primary language, 5+ years",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "Java (Spring Boot, Hibernate, JPA) - 5+ years",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "HTML5, CSS3, JavaScript (ES6+)",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "node.js",
+      "evidence": [
+        {
+          "quote": "Node.js (Express.js, NestJS) - 4+ years",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "I implemented the NestJS APIs",
+          "timestamp": "2025-12-19T09:01:20.000000",
+          "source": "conversation"
+        }
+      ]
+    },
+    {
+      "name": "react.js",
+      "evidence": [
+        {
+          "quote": "React.js (Hooks, Redux, Context API, Zustand) - 4+ years",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "React Native - 2 years",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "Some React components became too complex over time",
+          "timestamp": "2025-12-19T09:09:30.000000",
+          "source": "conversation"
+        }
+      ]
+    },
+    {
+      "name": "angular",
+      "evidence": [
+        {
+          "quote": "Angular (Angular 10+, RxJS) - 3 years",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "docker",
+      "evidence": [
+        {
+          "quote": "Docker, Docker Compose - 3 years",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "kubernetes",
+      "evidence": [
+        {
+          "quote": "Kubernetes - 1 year",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "ci/cd",
+      "evidence": [
+        {
+          "quote": "CI/CD pipelines using GitHub Actions",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "postgresql",
+      "evidence": [
+        {
+          "quote": "PostgreSQL - 4 years",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "mysql",
+      "evidence": [
+        {
+          "quote": "MySQL - 3 years",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "go",
+      "evidence": [
+        {
+          "quote": "MongoDB - 3 years",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "redis",
+      "evidence": [
+        {
+          "quote": "Redis - 2 years",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "rest api",
+      "evidence": [
+        {
+          "quote": "Designing REST APIs",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "graphql",
+      "evidence": [
+        {
+          "quote": "GraphQL (Apollo Server) - 1 year",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "JWT",
+      "evidence": [
+        {
+          "quote": "Implemented secure authentication using JWT",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "OAuth2",
+      "evidence": [
+        {
+          "quote": "Authentication & Authorization (JWT, OAuth2) - implemented",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "HTML5",
+      "evidence": [
+        {
+          "quote": "HTML5, CSS3, JavaScript (ES6+)",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "evidence": [
+        {
+          "quote": "TypeScript - 3 years",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "Flutter",
+      "evidence": [
+        {
+          "quote": "Flutter (Dart) - 1.5 years",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "Socket.io",
+      "evidence": [
+        {
+          "quote": "Socket.io for real-time",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "Linux",
+      "evidence": [
+        {
+          "quote": "Linux - 4 years",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "Nginx",
+      "evidence": [
+        {
+          "quote": "Nginx - 4 years",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "Terraform",
+      "evidence": [
+        {
+          "quote": "Terraform - read documentation, never actually used in production",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "aws",
+      "evidence": [
+        {
+          "quote": "HTML5, CSS3, JavaScript (ES6+)",
+          "timestamp": "",
+          "source": "resume"
+        },
+        {
+          "quote": "AWS (EC2, S3, Lambda) - 2 years",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "Next.js",
+      "evidence": [
+        {
+          "quote": "built the frontend flow in Next.js",
+          "timestamp": "2025-12-19T09:01:20.000000",
+          "source": "conversation"
+        }
+      ]
+    },
+    {
+      "name": "API Design",
+      "evidence": [
+        {
+          "quote": "I start with use cases and data contracts, then define REST endpoints",
+          "timestamp": "2025-12-19T09:08:10.000000",
+          "source": "conversation"
+        }
+      ]
+    },
+    {
+      "name": "Database",
+      "evidence": [
+        {
+          "quote": "I designed the database schema",
+          "timestamp": "2025-12-19T09:01:20.000000",
+          "source": "conversation"
+        },
+        {
+          "quote": "implemented idempotency checks using unique event IDs, wrapped critical updates in database transactions",
+          "timestamp": "2025-12-19T09:04:10.000000",
+          "source": "conversation"
+        },
+        {
+          "quote": "added stricter database constraints",
+          "timestamp": "2025-12-19T09:06:45.000000",
+          "source": "conversation"
+        }
+      ]
+    },
+    {
+      "name": "Webhooks",
+      "evidence": [
+        {
+          "quote": "integrated the payment provider webhooks",
+          "timestamp": "2025-12-19T09:01:20.000000",
+          "source": "conversation"
+        }
+      ]
+    },
+    {
+      "name": "WebSocket",
+      "evidence": [
+        {
+          "quote": "added a replay-safe mechanism for webhooks",
+          "timestamp": "2025-12-19T09:06:45.000000",
+          "source": "conversation"
+        }
+      ]
+    },
+    {
+      "name": "testing",
+      "evidence": [
+        {
+          "quote": "I write unit tests for core business logic",
+          "timestamp": "2025-12-19T09:12:45.000000",
+          "source": "conversation"
+        },
+        {
+          "quote": "integration tests exist but are limited",
+          "timestamp": "2025-12-19T09:12:45.000000",
+          "source": "conversation"
+        }
+      ]
+    },
+    {
+      "name": "DevOps",
+      "evidence": [
+        {
+          "quote": "I’m comfortable with Docker, CI pipelines, and basic server management",
+          "timestamp": "2025-12-19T09:19:30.000000",
+          "source": "conversation"
+        }
+      ]
+    },
+    {
+      "name": "System Design",
+      "evidence": [
+        {
+          "quote": "own the subscription billing feature end-to-end",
+          "timestamp": "2025-12-19T09:01:20.000000",
+          "source": "conversation"
+        },
+        {
+          "quote": "ownership of features end-to-end",
+          "timestamp": "2025-12-19T09:22:30.000000",
+          "source": "conversation"
+        }
+      ]
+    }
+  ],
+  "behavior_observations": [
+    {
+      "name": "Technical Leadership",
+      "evidence": [
+        {
+          "quote": "Led cross-functional team of 8 developers during critical microservices migration project",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "Collaboration",
+      "evidence": [
+        {
+          "quote": "Collaborated with product managers and QA teams to deliver features on schedule",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    },
+    {
+      "name": "Mentoring",
+      "evidence": [
+        {
+          "quote": "Mentored 3 junior developers",
+          "timestamp": "",
+          "source": "resume"
+        }
+      ]
+    }
+  ]
+}

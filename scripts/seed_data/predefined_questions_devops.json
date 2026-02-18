@@ -1,0 +1,139 @@
+{
+  "role": {
+    "id": "2b4f6d1a-3e2c-4a5b-9f0d-1a2b3c4d5e6f",
+    "name": "DevOps",
+    "level": "Senior",
+    "description": "DevOps / Platform engineering predefined question set",
+    "is_active": true
+  },
+  "question_set": {
+    "id": "8c7f6e5d-4b3a-2c1d-0f9e-8d7c6b5a4f3e",
+    "role_id": "2b4f6d1a-3e2c-4a5b-9f0d-1a2b3c4d5e6f",
+    "name": "DevOps Q1",
+    "version": "1",
+    "description": "Questions sourced from pq_devops.md",
+    "is_active": true
+  },
+  "questions": [
+    {
+      "id": "8f9d7a1b-2c3d-4e5f-9a0b-c1d2e3f40506",
+      "category": "CI/CD",
+      "question_text": "Can you describe your experience designing, implementing, and maintaining CI/CD pipelines? What tools and platforms have you used?",
+      "what_assesses": [
+        "CI/CD expertise",
+        "Tooling and automation experience"
+      ],
+      "expected_answer_pattern": "The candidate explains specific CI/CD tools used (e.g., Jenkins, GitHub Actions, GitLab CI), pipeline structure (build, test, deploy stages), branching strategy, and level of ownership (designed from scratch vs maintained existing pipelines). They demonstrate automation and reliability principles.",
+      "order": 0,
+      "is_required": true
+    },
+    {
+      "id": "b2e3c4d5-6f70-4a81-9b2c-d3e4f5061728",
+      "category": "PIPELINE DESIGN",
+      "question_text": "How do you design a CI/CD pipeline to ensure reliability, scalability, and fast feedback for developers?",
+      "what_assesses": [
+        "Pipeline architecture thinking",
+        "Engineering trade-offs"
+      ],
+      "expected_answer_pattern": "The candidate discusses stages (build, test, security scan, deploy), parallelization, caching, artifact management, rollback strategy, and monitoring. They explain trade-offs between speed and coverage and show structured thinking.",
+      "order": 1,
+      "is_required": true
+    },
+    {
+      "id": "c3f4e5d6-7081-4b92-9c3d-e4f506172839",
+      "category": "INFRASTRUCTURE AS CODE",
+      "question_text": "What is your experience with Infrastructure as Code (IaC)? Which tools have you used and how do you manage state and environments?",
+      "what_assesses": [
+        "Infrastructure automation",
+        "Environment management"
+      ],
+      "expected_answer_pattern": "The candidate mentions tools like Terraform, CloudFormation, or Pulumi. They explain state management, environment separation (dev/staging/prod), modularization, and version control practices.",
+      "order": 2,
+      "is_required": true
+    },
+    {
+      "id": "d4e5f6a7-8192-4ca3-9d4e-f50617283940",
+      "category": "CONTAINERIZATION",
+      "question_text": "Can you explain your experience with containerization and orchestration?",
+      "what_assesses": [
+        "Container ecosystem knowledge",
+        "Production deployment experience"
+      ],
+      "expected_answer_pattern": "The candidate explains use of Docker, Kubernetes, or similar platforms. They discuss image optimization, container security, orchestration basics (pods, services, deployments), scaling, and troubleshooting.",
+      "order": 3,
+      "is_required": true
+    },
+    {
+      "id": "e5f6a7b8-92a3-4db4-9e5f-061728394051",
+      "category": "OBSERVABILITY",
+      "question_text": "How do you handle monitoring, logging, and alerting in production environments?",
+      "what_assesses": [
+        "Observability practices",
+        "Operational maturity"
+      ],
+      "expected_answer_pattern": "The candidate mentions tools like Prometheus, Grafana, ELK stack, Datadog, etc. They explain metrics vs logs vs traces, alert thresholds, and how incidents are detected and resolved.",
+      "order": 4,
+      "is_required": true
+    },
+    {
+      "id": "f6a7b8c9-a3b4-4ec5-9f60-617283940512",
+      "category": "INCIDENT MANAGEMENT",
+      "question_text": "Describe a production incident you were involved in. What happened, and how did you resolve it?",
+      "what_assesses": [
+        "Incident management",
+        "Problem-solving under pressure"
+      ],
+      "expected_answer_pattern": "The candidate clearly explains the issue, root cause analysis, communication, mitigation steps, and postmortem actions. They demonstrate ownership and structured debugging.",
+      "order": 5,
+      "is_required": true
+    },
+    {
+      "id": "07a8b9c1-b4c5-4fd6-9a71-728394051623",
+      "category": "SECURITY",
+      "question_text": "How do you approach security in CI/CD and infrastructure pipelines?",
+      "what_assesses": [
+        "DevSecOps awareness",
+        "Security integration"
+      ],
+      "expected_answer_pattern": "The candidate mentions secrets management, vulnerability scanning, least privilege access, dependency scanning, and possibly SAST/DAST integration into pipelines.",
+      "order": 6,
+      "is_required": true
+    },
+    {
+      "id": "18b9c1d2-c5d6-40e7-9b82-839405162734",
+      "category": "CLOUD ARCHITECTURE",
+      "question_text": "What cloud platforms have you worked with, and how do you design cloud-native infrastructure?",
+      "what_assesses": [
+        "Cloud architecture knowledge",
+        "Platform familiarity"
+      ],
+      "expected_answer_pattern": "The candidate mentions AWS, Azure, or GCP services, explains networking basics (VPC, IAM, load balancers), scaling strategies, and cost considerations.",
+      "order": 7,
+      "is_required": true
+    },
+    {
+      "id": "29c1d2e3-d6e7-41f8-9c93-940516273845",
+      "category": "ENVIRONMENT MANAGEMENT",
+      "question_text": "How do you manage environment consistency between development, staging, and production?",
+      "what_assesses": [
+        "Environment parity understanding",
+        "Configuration management"
+      ],
+      "expected_answer_pattern": "The candidate explains environment isolation, config management, feature flags, environment variables, and possibly GitOps or IaC strategies.",
+      "order": 8,
+      "is_required": true
+    },
+    {
+      "id": "3ad2e3f4-e7f8-4209-9da4-051627384956",
+      "category": "COLLABORATION",
+      "question_text": "How do you collaborate with developers to improve deployment speed and reliability?",
+      "what_assesses": [
+        "Cross-functional collaboration",
+        "DevOps mindset"
+      ],
+      "expected_answer_pattern": "The candidate explains communication practices, shared ownership, documentation, internal tooling, and enabling developers rather than gatekeeping.",
+      "order": 9,
+      "is_required": true
+    }
+  ]
+}
